@@ -4,4 +4,3 @@ testElement.appendChild(node);
 
 var element = document.getElementById("results");
 element.appendChild(testElement);
-
