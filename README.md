@@ -1,4 +1,4 @@
 # STorrent
 Search for torrents on multiple sites
 
-This app is in development stage!!
+This application is at an early stage of development!!

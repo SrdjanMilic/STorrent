@@ -4,10 +4,11 @@
   "version": "0.1.0",
   "description": "Electron cross platform open source desktop app",
   "productDescription": "Search for torrents on multiple sites",
-  "license": "ISC",
+  "license": "GPL-3.0",
   "main": "main.js",
   "author": "Srdjan Milic",
   "homepage": "http://sdevelopment.info",
+  "repository": "github:SrdjanMilic/STorrent",
   "maintainers": [
     "Srdjan Milic"
   ],
