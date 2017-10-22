@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>STorrent</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h1 id="heading-text">STorrent - Search for torrents on multiple sites</h1>
+    <form>
+        <input type="search" name="search">
+        <input type="button" onclick="torrentSearch()" value="Search">
+    </form>
+    <div id="results"></div>
+    
+    <div class="jquery-test">
+        <p>// JQuery Test Example</p>
+    </div>
+    <button id="btn1">Set Text</button>
+
+    <script src="js/myScript.js"></script>
+    <!-- <script src="./node_modules/jquery/dist/jquery.min.js" onload="window.$ = window.jQuery = module.exports;"></script> -->
+    <script>window.$ = window.jQuery = require('jquery');</script>
+    <script>
+        $("<h3>Test Passes</h3>").appendTo(".jquery-test");
+        console.log($(".jquery-test").html());
+        $("#btn1").click(function () {
+            $(".jquery-test h3").html("Hello world!");
+        });
+    </script>
+
+</body>
+
+</html>
