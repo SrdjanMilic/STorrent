@@ -19,11 +19,13 @@
   },
   "devDependencies": {
     "electron": "^1.7.9",
+    "electron-icon-maker": "0.0.4",
     "electron-installer-debian": "^0.5.2",
     "electron-packager": "^9.0.1",
     "electron-prebuilt": "^1.4.13"
   },
   "dependencies": {
+    "bootstrap": "^3.3.7",
     "jquery": "^3.2.1",
     "torrent-search-api": "^1.0.18"
   }

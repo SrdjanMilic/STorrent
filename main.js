@@ -11,7 +11,7 @@ let win
 
 function createWindow() {
   // Create the browser window.
-  win = new BrowserWindow({ width: 1000, height: 600, icon: 'images/icon.png' })
+  win = new BrowserWindow({ width: 1000, height: 600, icon: 'images/storrent.png' })
 
   // and load the index.html of the app.
   win.loadURL(url.format({

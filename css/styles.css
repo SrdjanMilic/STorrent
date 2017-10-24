@@ -1,3 +1,15 @@
+body {
+    padding: 1%;
+}
+
+/* .search-form-group {
+    display: flex;
+} */
+
+/* input[type=text] {
+    width: 60%;
+} */
+
 .jquery-test p {
-    color: blue;
+    color: #0288d1;
 }
