@@ -2,6 +2,9 @@ body {
     padding: 1%;
     color: #4d4d4d;
 }
+#results {
+    color: #f4511e;
+}
 
 .jquery-test p {
     color: #0288d1;
