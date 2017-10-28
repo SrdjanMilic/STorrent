@@ -11,9 +11,9 @@
 
 <body>
     <h2 id="heading-text">STorrent - Search for torrents on multiple sites</h2>
-    <form>
+    <form class="form-group">
         <input type="text" placeholder="Type here...">
-        <button type="submit" class="btn-default">Go!</button>
+        <button type="submit" id="btn" class="btn-form">Go!</button>
     </form>
 
     <br>
@@ -22,14 +22,14 @@
     <div class="jquery-test">
         <p>// JQuery Test Example (CSS working)</p>
     </div>
-    <button id="btn1" type="button" class="btn-primary">Push</button>
+    <button id="btn" class="btn-search" type="button">Search</button>
 
     <script src="js/myScript.js"></script>
     <script>window.$ = window.jQuery = require('jquery');</script>
     <script>
         $("<h4>Test Passes</h4>").appendTo(".jquery-test");
         console.log($(".jquery-test").html());
-        $("#btn1").click(function () {
+        $(".btn-search").click(function () {
             $(".jquery-test h4").html("Hello world!");
         });
     </script>
