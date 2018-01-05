@@ -1,7 +1,8 @@
 <h2>STorrent - Search for torrents on multiple sites</h2>
-Electron multi platform desktop application.
 
-Default torrent providers are:
+<p>Electron multi platform desktop application.</p>
+
+Default torrent providers are:<br>
 torrentSearch.enableProvider('ThePirateBay');	// public<br>
 torrentSearch.disableProvider('Yggtorrent');	// authentication<br>
 torrentSearch.disableProvider('KickassTorrents');	// public<br>
