@@ -2,43 +2,117 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>STorrent</title>
-    <link rel="stylesheet" href="css/styles.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>STorrent</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
 
 <body>
-    <h2 id="heading-text">STorrent - Search for torrents on multiple sites</h2>
-    <form class="form-group">
-        <input type="text" placeholder="Type here...">
-        <button type="submit" id="btn" class="btn-form">Go!</button>
-    </form>
+	<h3 id="heading-text">STorrent - Search for torrents on multiple sites</h3>
 
-    <br>
+	<br>
 
-    <p>Bellow this line search results should be outputed:</p>
-    <div id="results"></div>
+	<div class="input-group">
+		<input type="text" id="search-term" class="form-control" placeholder="Search for...">
+		<span class="input-group-btn">
+			<button id='btn-search' class="btn btn-primary" type="button">Go!</button>
+		</span>
+	</div>
 
-    <br>
-    
-    <div id="JavaScript-test"></div>
+	<br>
+	<br>
 
-    <div class="jquery-test">
-        <p>JQuery Test Example / (CSS working)</p>
-    </div>
-    <button id="btn" class="btn-search" type="button">Search</button>
+	<!-- Search result output -->
 
-    <script src="js/myScript.js"></script>
-    <script>window.$ = window.jQuery = require('jquery');</script>
-    <script>
-        $("<h4>Test Passes</h4>").appendTo(".jquery-test");
-        console.log($(".jquery-test").html());
-        $(".btn-search").click(function () {
-            $(".jquery-test h4").html("Hello world!");
-        });
-    </script>
+	<table class="table table-condensed table-bordered table-hover table-striped">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Title</th>
+				<th scope="col">Time</th>
+				<th scope="col">Seeds</th>
+				<th scope="col">Peers</th>
+				<th scope="col">Size</th>
+				<th scope="col">URL</th>
+				<th scope="col">Provider</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th scope="row">1</th>
+				<td id="title-1"></td>
+				<td id="time-1"></td>
+				<td id="seeds -1"></td>
+				<td id="peers-1"></td>
+				<td id="size-1"></td>
+				<td id="url-1"></td>
+				<td id="provider-1"></td>
+			</tr>
+			<tr>
+				<th scope="row">2</th>
+				<td id="title-2"></td>
+				<td id="time-2"></td>
+				<td id="seeds -2"></td>
+				<td id="peers-2"></td>
+				<td id="size-2"></td>
+				<td id="url-2"></td>
+				<td id="provider-2"></td>
+			</tr>
+			<tr>
+				<th scope="row">3</th>
+				<td id="title-3"></td>
+				<td id="time-3"></td>
+				<td id="seeds -3"></td>
+				<td id="peers-3"></td>
+				<td id="size-3"></td>
+				<td id="url-3"></td>
+				<td id="provider-3"></td>
+			</tr>
+			<tr>
+				<th scope="row">4</th>
+				<td id="title-4"></td>
+				<td id="time-4"></td>
+				<td id="seeds -4"></td>
+				<td id="peers-4"></td>
+				<td id="size-4"></td>
+				<td id="url-4"></td>
+				<td id="provider-4"></td>
+			</tr>
+			<tr>
+				<th scope="row">5</th>
+				<td id="title-5"></td>
+				<td id="time-5"></td>
+				<td id="seeds -5"></td>
+				<td id="peers-5"></td>
+				<td id="size-5"></td>
+				<td id="url-5"></td>
+				<td id="provider-5"></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<p id="indicator"></p>
+	<!-- <webview src="https://www.github.com/" style="width: 100%; height: 800px;"></webview> -->
+
+	<!-- Container for for troubleshooting purposes -->
+	<webview id="webview" src="html/spinner.html"></webview>
+	<!-- <webview src="html/spinner.html" style="width: 100%;"></webview> -->
+
+	<p id="results"></p>
+	<p id="providers"></p>
+	<p id="active-providers"></p>
+
+	<script src="js/myScript.js"></script>
+
+	<script>
+	</script>
+
+	<!-- JQuery call syntax for node.js environment (for JQuery installed via npm) -->
+	<script>window.$ = window.jQuery = require("jquery");</script>
 
 </body>
 
