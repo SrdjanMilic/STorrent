@@ -1,8 +1,10 @@
-<h2>STorrent - Search for torrents on multiple sites</h2>
+# STorrent - Search for torrents on multiple sites
 
-<p>Electron multi platform desktop application.</p>
+<p><strong>Electron multi platform desktop application.</strong></p>
 
-Default torrent providers are:<br>
+In master branch there is Linux download bundle and there is Windows branch also for Windows users. 
+
+Default torrent providers are:<br><br>
 torrentSearch.enableProvider('ThePirateBay');	// public<br>
 torrentSearch.disableProvider('Yggtorrent');	// authentication<br>
 torrentSearch.disableProvider('KickassTorrents');	// public<br>
@@ -17,7 +19,9 @@ torrentSearch.enableProvider('ExtraTorrent');	// public<br>
 
 You can toggle the state of providers by renaming '...disableProvider...' to '...enableProvider...' in myScript.js file.
 
-This application is at an early stage of development and has a very basic functionality for now!
+This application is still in development, but it has a basic working functionality and can be useful!
+
+You don't have to visit torrent sites any more for downloading a torrent file.
 
 New features and improvements will be implemented as time goes by.
 
@@ -26,4 +30,6 @@ https://github.com/JimmyLaurent/torrent-search-api
 
 For customization options please follow the link above.
 
-Also, feel free to send pull requests, or to contact me at any time about the app.
+Thank you for take an interest about this app.
+
+Feel free to contact me at any time.

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>STorrent</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+	<h3 id="heading-text">STorrent - Search for torrents on multiple sites</h3>
+
+	<br>
+
+	<div class="input-group">
+		<input type="text" id="search-term" class="form-control" placeholder="Search for...">
+		<span class="input-group-btn">
+			<button id='btn-search' class="btn btn-primary" type="button">Go!</button>
+		</span>
+	</div>
+
+	<br>
+	<br>
+
+	<div id="spinner" class="sk-circle">
+		<div class="sk-circle1 sk-child"></div>
+		<div class="sk-circle2 sk-child"></div>
+		<div class="sk-circle3 sk-child"></div>
+		<div class="sk-circle4 sk-child"></div>
+		<div class="sk-circle5 sk-child"></div>
+		<div class="sk-circle6 sk-child"></div>
+		<div class="sk-circle7 sk-child"></div>
+		<div class="sk-circle8 sk-child"></div>
+		<div class="sk-circle9 sk-child"></div>
+		<div class="sk-circle10 sk-child"></div>
+		<div class="sk-circle11 sk-child"></div>
+		<div class="sk-circle12 sk-child"></div>
+	</div>
+
+	<!-- Search result output -->
+
+	<table class="table table-condensed table-bordered table-hover table-striped">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Title</th>
+				<th scope="col">Time</th>
+				<th scope="col">Seeds</th>
+				<th scope="col">Peers</th>
+				<th scope="col">Size</th>
+				<th scope="col">URL</th>
+				<th scope="col">Provider</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th scope="row">1</th>
+				<td id="title-1"></td>
+				<td id="time-1"></td>
+				<td id="seeds -1"></td>
+				<td id="peers-1"></td>
+				<td id="size-1"></td>
+				<td id="url-1"></td>
+				<td id="provider-1"></td>
+			</tr>
+			<tr>
+				<th scope="row">2</th>
+				<td id="title-2"></td>
+				<td id="time-2"></td>
+				<td id="seeds -2"></td>
+				<td id="peers-2"></td>
+				<td id="size-2"></td>
+				<td id="url-2"></td>
+				<td id="provider-2"></td>
+			</tr>
+			<tr>
+				<th scope="row">3</th>
+				<td id="title-3"></td>
+				<td id="time-3"></td>
+				<td id="seeds -3"></td>
+				<td id="peers-3"></td>
+				<td id="size-3"></td>
+				<td id="url-3"></td>
+				<td id="provider-3"></td>
+			</tr>
+			<tr>
+				<th scope="row">4</th>
+				<td id="title-4"></td>
+				<td id="time-4"></td>
+				<td id="seeds -4"></td>
+				<td id="peers-4"></td>
+				<td id="size-4"></td>
+				<td id="url-4"></td>
+				<td id="provider-4"></td>
+			</tr>
+			<tr>
+				<th scope="row">5</th>
+				<td id="title-5"></td>
+				<td id="time-5"></td>
+				<td id="seeds -5"></td>
+				<td id="peers-5"></td>
+				<td id="size-5"></td>
+				<td id="url-5"></td>
+				<td id="provider-5"></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<script src="js/myScript.js"></script>
+	<!-- JQuery call syntax for node.js environment -->
+	<script>window.$ = window.jQuery = require("jquery");</script>
+
+</body>
+
+</html>

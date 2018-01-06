@@ -7,7 +7,6 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>STorrent</title>
 	<link rel="stylesheet" href="css/styles.css">
-	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
 	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
 
@@ -25,6 +24,21 @@
 
 	<br>
 	<br>
+
+	<div id="spinner" class="sk-circle">
+		<div class="sk-circle1 sk-child"></div>
+		<div class="sk-circle2 sk-child"></div>
+		<div class="sk-circle3 sk-child"></div>
+		<div class="sk-circle4 sk-child"></div>
+		<div class="sk-circle5 sk-child"></div>
+		<div class="sk-circle6 sk-child"></div>
+		<div class="sk-circle7 sk-child"></div>
+		<div class="sk-circle8 sk-child"></div>
+		<div class="sk-circle9 sk-child"></div>
+		<div class="sk-circle10 sk-child"></div>
+		<div class="sk-circle11 sk-child"></div>
+		<div class="sk-circle12 sk-child"></div>
+	</div>
 
 	<!-- Search result output -->
 
@@ -95,23 +109,8 @@
 		</tbody>
 	</table>
 
-	<p id="indicator"></p>
-	<!-- <webview src="https://www.github.com/" style="width: 100%; height: 800px;"></webview> -->
-
-	<!-- Container for for troubleshooting purposes -->
-	<webview id="webview" src="html/spinner.html"></webview>
-	<!-- <webview src="html/spinner.html" style="width: 100%;"></webview> -->
-
-	<p id="results"></p>
-	<p id="providers"></p>
-	<p id="active-providers"></p>
-
 	<script src="js/myScript.js"></script>
-
-	<script>
-	</script>
-
-	<!-- JQuery call syntax for node.js environment (for JQuery installed via npm) -->
+	<!-- JQuery call syntax for node.js environment -->
 	<script>window.$ = window.jQuery = require("jquery");</script>
 
 </body>

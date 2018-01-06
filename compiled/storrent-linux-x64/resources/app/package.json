@@ -1,0 +1,32 @@
+{
+  "name": "storrent",
+  "productName": "STorrent",
+  "version": "0.1.0",
+  "description": "Electron cross platform open source desktop app",
+  "productDescription": "Search for torrents on multiple sites",
+  "license": "GPL-3.0",
+  "main": "main.js",
+  "author": "Srdjan Milic",
+  "homepage": "http://sdevelopment.info",
+  "repository": "github:SrdjanMilic/STorrent",
+  "maintainers": [
+    "Srdjan Milic"
+  ],
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager . storrent --platform linux --arch x64 --prune true --ignore .vscode --ignore installers --overwrite",
+    "deb64": "electron-installer-debian --src ./storrent-linux-x64 --arch amd64 --dest ./installers --overwrite"
+  },
+  "devDependencies": {
+    "electron": "^1.7.9",
+    "electron-icon-maker": "0.0.4",
+    "electron-installer-debian": "^0.5.2",
+    "electron-packager": "^9.0.1",
+    "electron-prebuilt": "^1.4.13"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1",
+    "torrent-search-api": "^1.0.18"
+  }
+}

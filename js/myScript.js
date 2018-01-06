@@ -1,4 +1,3 @@
-// const BrowserWindow = require('electron').remote.BrowserWindow;
 const TorrentSearchApi = require('torrent-search-api');
 const torrentSearch = new TorrentSearchApi();
 const $ = require('jquery');
@@ -16,6 +15,28 @@ torrentSearch.disableProvider('IpTorrents');	// authentication
 torrentSearch.disableProvider('TorrentLeech');	// authentication
 torrentSearch.disableProvider('1337x');	// public
 torrentSearch.enableProvider('ExtraTorrent');	// public
+
+function hideSpinner() {
+	document.getElementById('spinner').style.display = 'none';
+}
+
+hideSpinner();
+
+let searchTerm = document.getElementById('search-term');
+
+// Event listeners
+
+searchTerm.addEventListener('keypress', function () {
+	if (event.keyCode === 13) {
+		document.getElementById('spinner').style.display = 'flex';
+		searchResults();
+	}
+});
+
+document.getElementById('btn-search').addEventListener('click', function () {
+	document.getElementById('spinner').style.display = 'flex';
+	searchResults();
+});
 
 function searchResults() {
 	torrentSearch.search(searchTerm.value, '', 5)
@@ -55,8 +76,6 @@ function searchResults() {
 			document.getElementById('size-4').innerHTML = JSON.stringify(torrents['3'].size).substr(1).slice(0, -1);
 			document.getElementById('size-5').innerHTML = JSON.stringify(torrents['4'].size).substr(1).slice(0, -1);
 
-			// document.getElementById('url-1').innerHTML = ''<a href="' + urlString + '"' + class="magnet-url"' + '>click here please</a>'';
-			// document.getElementById('url-1').innerHTML = JSON.stringify(torrents['0'].magnet).substr(1).slice(0, -1);
 			document.getElementById('url-1').innerHTML = magnetLink;
 			document.getElementById('url-2').innerHTML = magnetLink;
 			document.getElementById('url-3').innerHTML = magnetLink;
@@ -72,54 +91,15 @@ function searchResults() {
 			// Call for torrent objects output used for troubleshooting purposes
 			// document.getElementById('results').innerHTML = JSON.stringify(torrents);
 		})
-
+		.then(function () {
+			hideSpinner();
+		})
 		.catch(err => {
-			window.alert(err);
+			window.alert('Error occurred!' + '\r\n' + err + '\r\n' + ' Please, try again.');
+			hideSpinner();
 		});
 }
 
 // Check for providers
 // document.getElementById('providers').innerHTML = JSON.stringify(torrentSearch.getProviders());
 // document.getElementById('active-providers').innerHTML = JSON.stringify(torrentSearch.getActiveProviders());
-
-// Spinner
-// Event listeners
-
-let searchTerm = document.getElementById('search-term');
-
-const webView = document.querySelector('webview');
-let hideWebView = document.getElementById('webview').style.display = "none";
-
-searchTerm.addEventListener('keypress', function () {
-	if (event.keyCode === 13) {
-
-		document.getElementById('webview').style.display = "flex";
-
-		searchResults();
-
-		// let waitForResults = webview.isWaitingForResponse(searchResults());
-		// if (waitForResults == true) {
-		// 	document.getElementById('webview').style.display = "none";
-		// 	webView.scrollTop();
-		// }
-
-
-		// document.getElementById('webview').style.display = "none";
-
-		webView.addEventListener('did-get-redirect-request', () => {
-			webView.openDevTools()
-		})
-
-	}
-
-});
-
-document.getElementById('btn-search').addEventListener('click', function () {
-	searchResults();
-});
-
-
-
-
-// webview.addEventListener('did-start-loading', loadstart)
-// webview.addEventListener('did-stop-loading', loadstop)
