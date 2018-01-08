@@ -2,8 +2,6 @@
 
 <p><strong>Electron multi platform desktop application.</strong></p>
 
-In master branch there is Linux download bundle and there is Windows branch also for Windows users. 
-
 Torrent search providers are:<br><br>
 torrentSearch.disableProvider('ThePirateBay');	// public<br>
 torrentSearch.disableProvider('Yggtorrent');	// authentication<br>
