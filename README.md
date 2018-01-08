@@ -17,11 +17,9 @@ torrentSearch.disableProvider('ExtraTorrent');	// public<br>
 
 You can toggle the state of providers by renaming '...disableProvider...' to '...enableProvider...' in js/myScript.js file.
 
-This application is still in development, but it has a basic working functionality and can be very useful!
+This application is still in development, but it has a basic working functionality and can be very useful as you don't have to visit torrent sites any more for downloading a torrent file.
 
-You don't have to visit torrent sites any more for downloading a torrent file.
-
-To start the application, cd to app folder and then run:<br>
+To start the application on windows, cd to app folder and then run:<br>
 1. npm install electron<br>
 2. npm start<br>
 
@@ -35,5 +33,3 @@ https://github.com/JimmyLaurent/torrent-search-api
 For customization options please follow the link above.
 
 Thank you for taking an interest for this app.
-
-Feel free to contact me at any time.
