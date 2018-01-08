@@ -23,7 +23,9 @@ This application is still in development, but it has a basic working functionali
 
 You don't have to visit torrent sites any more for downloading a torrent file.
 
-To start the application, download, cd to app folder and run 'npm start' in terminal.
+To start the application, cd to app folder and then run:<br>
+1. npm install electron<br>
+2. npm start<br>
 
 New features and improvements will be implemented as time goes by.
 
