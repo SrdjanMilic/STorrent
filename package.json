@@ -25,8 +25,9 @@
     "electron-prebuilt": "^1.4.13"
   },
   "dependencies": {
+    "electron": "^1.7.9",
+    "torrent-search-api": "^1.0.18",
     "bootstrap": "^3.3.7",
-    "jquery": "^3.2.1",
-    "torrent-search-api": "^1.0.18"
+    "jquery": "^3.2.1"
   }
 }
