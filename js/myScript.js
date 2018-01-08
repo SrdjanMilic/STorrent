@@ -1,48 +1,44 @@
+// 'use strict';
+
 const TorrentSearchApi = require('torrent-search-api');
 const torrentSearch = new TorrentSearchApi();
 const $ = require('jquery');
 
 // Search providers
 
-torrentSearch.enableProvider('ThePirateBay');	// public
+torrentSearch.disableProvider('ThePirateBay');	// public
 torrentSearch.disableProvider('Yggtorrent');	// authentication
 torrentSearch.disableProvider('KickassTorrents');	// public
-torrentSearch.enableProvider('TorrentProject');	// public
-torrentSearch.enableProvider('Rarbg');	// public
-torrentSearch.enableProvider('Torrent9');	// public
+torrentSearch.disableProvider('TorrentProject');	// public
+torrentSearch.disableProvider('Rarbg');	// public
+torrentSearch.disableProvider('Torrent9');	// public
 torrentSearch.enableProvider('Torrentz2');	// public
 torrentSearch.disableProvider('IpTorrents');	// authentication
 torrentSearch.disableProvider('TorrentLeech');	// authentication
 torrentSearch.disableProvider('1337x');	// public
-torrentSearch.enableProvider('ExtraTorrent');	// public
-
-function hideSpinner() {
-	document.getElementById('spinner').style.display = 'none';
-}
-
-hideSpinner();
+torrentSearch.disableProvider('ExtraTorrent');	// public
 
 let searchTerm = document.getElementById('search-term');
+let buttonClick = document.getElementById('btn-search');
 
-// Event listeners
-
-searchTerm.addEventListener('keypress', function () {
+searchTerm.addEventListener('keypress', function enterSearch() {
 	if (event.keyCode === 13) {
 		document.getElementById('spinner').style.display = 'flex';
 		searchResults();
 	}
 });
 
-document.getElementById('btn-search').addEventListener('click', function () {
+buttonClick.addEventListener('click', function clickSearch() {
 	document.getElementById('spinner').style.display = 'flex';
 	searchResults();
 });
 
 function searchResults() {
+
 	torrentSearch.search(searchTerm.value, '', 5)
 		.then(torrents => {
 
-			// URL create from JSON output
+			// Dynamic URL creation from JSON output
 			let magnetString = JSON.stringify(torrents['0'].magnet).substr(1).slice(0, -1);
 			let magnetLink = '<a href="' + magnetString + '" class="btn btn-default btn-xs btn-block" role="button"' + '>Download</a>';
 
@@ -89,16 +85,22 @@ function searchResults() {
 			document.getElementById('provider-5').innerHTML = JSON.stringify(torrents['4'].provider).substr(1).slice(0, -1);
 
 			// Call for torrent objects output used for troubleshooting purposes
-			// document.getElementById('results').innerHTML = JSON.stringify(torrents);
+			// let stringify = document.getElementById('json-output-stringify').innerHTML = JSON.stringify(torrents['0']);
+			// document.getElementById('json-output-parse').innerHTML = JSON.parse(stringify);
+
 		})
+
 		.then(function () {
-			hideSpinner();
+			document.getElementById('spinner').style.display = 'none';
 		})
+
 		.catch(err => {
-			window.alert('Error occurred!' + '\r\n' + err + '\r\n' + ' Please, try again.');
-			hideSpinner();
+			window.alert('Error occurred!' + '\r\n' + err + '\r\n' + 'Please, try again.');
+			document.getElementById('spinner').style.display = 'none';
 		});
 }
+
+
 
 // Check for providers
 // document.getElementById('providers').innerHTML = JSON.stringify(torrentSearch.getProviders());
