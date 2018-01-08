@@ -18,7 +18,6 @@
     "deb64": "electron-installer-debian --src ./storrent-linux-x64 --arch amd64 --dest ./installer --overwrite"
   },
   "devDependencies": {
-    "electron": "^1.7.9",
     "electron-icon-maker": "0.0.4",
     "electron-installer-debian": "^0.5.2",
     "electron-packager": "^9.0.1",
