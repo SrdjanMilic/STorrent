@@ -13,7 +13,7 @@
     "Srdjan Milic"
   ],
   "scripts": {
-    "start": "electron .",
+    "start": "./node_modules/.bin/electron .",
     "build": "electron-packager . storrent --platform linux --arch x64 --prune true --ignore .vscode --ignore installer --overwrite",
     "deb64": "electron-installer-debian --src ./storrent-linux-x64 --arch amd64 --dest ./installer --overwrite"
   },

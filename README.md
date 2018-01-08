@@ -17,15 +17,15 @@ torrentSearch.disableProvider('ExtraTorrent');	// public<br>
 
 You can toggle the state of providers by renaming '...disableProvider...' to '...enableProvider...' in js/myScript.js file.
 
-Only one provider is enabled because the speed of output results, but you can always enable providers as you wish.
-
-This application is still in development, but it has a basic working functionality and can be useful!
+This application is still in development, but it has a basic working functionality and can be very useful!
 
 You don't have to visit torrent sites any more for downloading a torrent file.
 
 To start the application, cd to app folder and then run:<br>
 1. npm install electron<br>
 2. npm start<br>
+
+Linux users needs to run just 'npm start' without first step.
 
 New features and improvements will be implemented as time goes by.
 

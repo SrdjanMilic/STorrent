@@ -9,9 +9,9 @@ const $ = require('jquery');
 torrentSearch.disableProvider('ThePirateBay');	// public
 torrentSearch.disableProvider('Yggtorrent');	// authentication
 torrentSearch.disableProvider('KickassTorrents');	// public
-torrentSearch.disableProvider('TorrentProject');	// public
+torrentSearch.enableProvider('TorrentProject');	// public
 torrentSearch.disableProvider('Rarbg');	// public
-torrentSearch.disableProvider('Torrent9');	// public
+torrentSearch.enableProvider('Torrent9');	// public
 torrentSearch.enableProvider('Torrentz2');	// public
 torrentSearch.disableProvider('IpTorrents');	// authentication
 torrentSearch.disableProvider('TorrentLeech');	// authentication
