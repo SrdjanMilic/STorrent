@@ -21,7 +21,10 @@ This application is still in development. It has a working functionality and can
 
 Everything except distributable and installers directories are source code.
 
-To start the application from source you need to have [NODE.JS](https://nodejs.org/en/) installed, then cd to directory and issue 'npm start' in terminal.
+To start the application from source you need to have [NODE.JS](https://nodejs.org/en/) installed, then cd to directory and issue 'npm start' in terminal. Windows users will need to reinstall electron with 'npm install electron' before the 'npm start'.
+
+In distributable directory you can find builds for windows and linux. To start the app from there just double click on storrent executable.<br>
+Installers executables are in installers directory.
 
 New features and improvements will be implemented as time goes by.
 
