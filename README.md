@@ -2,7 +2,7 @@
 
 <p><strong>Electron multi platform desktop application.</strong></p>
 
-Torrent search providers are:<br><br>
+Torrent search providers are inside brackets:<br><br>
 torrentSearch.disableProvider('ThePirateBay');	// public<br>
 torrentSearch.disableProvider('Yggtorrent');	// authentication<br>
 torrentSearch.disableProvider('KickassTorrents');	// public<br>
