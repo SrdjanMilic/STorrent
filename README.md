@@ -19,7 +19,7 @@ You can toggle the state of providers by renaming '...disableProvider...' to '..
 
 This application is still in development, but it has a basic working functionality and can be very useful as you don't have to visit torrent sites any more for downloading a torrent file.
 
-To start the application you need to have [NODE.JS](https://nodejs.org/en/) installed.
+To start the application from source you need to have [NODE.JS](https://nodejs.org/en/) installed.
 
 On windows - cd to app folder and then run:<br>
 1. npm install electron<br>
@@ -27,13 +27,8 @@ On windows - cd to app folder and then run:<br>
 
 Linux users needs to run just 'npm start' without need to reinstall electron package (first step).
 
-I'll commit binaries and installers soon enough, so all those step from above will be needless.
+I'll commit app bundle and installers soon enough, so all those step from above will be needless.
 
 New features and improvements will be implemented as time goes by.
 
-STorrent is based on the 'torrent-search-api' by Jimmy Laurent:<br>
-https://github.com/JimmyLaurent/torrent-search-api
-
-For more info please follow the link above.
-
-Thank you for taking an interest for this app.
+STorrent is based on the 'torrent-search-api' by [Jimmy Laurent](https://github.com/JimmyLaurent/torrent-search-api).<br>
