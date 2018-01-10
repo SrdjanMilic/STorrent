@@ -14,14 +14,12 @@
   ],
   "scripts": {
     "start": "electron .",
-    "build": "electron-packager . storrent --platform linux --arch x64 --prune true --ignore .vscode --ignore installer --overwrite",
-    "deb64": "electron-installer-debian --src ./storrent-linux-x64 --arch amd64 --dest ./installer --overwrite"
+    "deb64": "electron-installer-debian --src ~/Downloads/storrent_linux_x64_distributable --arch amd64 --dest ./installer --overwrite"
   },
   "devDependencies": {
     "electron": "^1.7.10",
     "electron-icon-maker": "0.0.4",
     "electron-installer-debian": "^0.5.2",
-    "electron-packager": "^9.0.1",
     "electron-prebuilt": "^1.4.13"
   },
   "dependencies": {

@@ -6,7 +6,7 @@ const $ = require('jquery');
 
 // Search providers
 
-torrentSearch.disableProvider('ThePirateBay');	// public
+torrentSearch.enableProvider('ThePirateBay');	// public
 torrentSearch.disableProvider('Yggtorrent');	// authentication
 torrentSearch.disableProvider('KickassTorrents');	// public
 torrentSearch.enableProvider('TorrentProject');	// public
