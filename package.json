@@ -20,7 +20,7 @@
     "electron": "^1.7.10",
     "electron-icon-maker": "0.0.4",
     "electron-installer-debian": "^0.5.2",
-    "electron-prebuilt": "^1.4.13"
+    "eslint": "^4.15.0"
   },
   "dependencies": {
     "torrent-search-api": "^1.0.18",
