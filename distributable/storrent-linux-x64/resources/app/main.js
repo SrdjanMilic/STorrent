@@ -8,7 +8,7 @@ let win;
 
 function createWindow() {
 	// Create the browser window.
-	win = new BrowserWindow({ width: 1200, height: 800, show: false, icon: 'images/icons/png/256x256.png'});
+	win = new BrowserWindow({ width: 1200, height: 800, show: false, icon: 'images/icons/storrent.png'});
 
 	// and load the index.html of the app.
 	win.loadURL(url.format({

@@ -9,17 +9,16 @@
   "author": "Srdjan Milic",
   "homepage": "http://sdevelopment.info",
   "repository": "github:SrdjanMilic/STorrent",
+  "icon": "images/storrent.png",
   "maintainers": [
     "Srdjan Milic"
   ],
   "scripts": {
-    "start": "electron .",
-    "deb64": "electron-installer-debian --src ./distributable/storrent_linux_x64_distributable --arch amd64 --dest ./installers --overwrite"
+    "start": "electron ."
   },
   "devDependencies": {
     "electron": "^1.7.10",
     "electron-icon-maker": "0.0.4",
-    "electron-installer-debian": "^0.5.2",
     "eslint": "^4.15.0"
   },
   "dependencies": {

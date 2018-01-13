@@ -17,17 +17,14 @@ torrentSearch.disableProvider('ExtraTorrent');	// public<br>
 
 You can toggle the state of providers by renaming '...disableProvider...' to '...enableProvider...' in js/myScript.js file.
 
-This application is still in development, but it has a basic working functionality and can be very useful as you don't have to visit torrent sites any more for downloading a torrent file.
+This application is still in development. It has a working functionality and can be very useful, as you don't have to visit torrent sites any more for downloading a torrent file.
 
-To start the application from source you need to have [NODE.JS](https://nodejs.org/en/) installed.
+Everything except distributable and installers directories are source code.
 
-On windows - cd to app folder and then run:<br>
-1. npm install electron<br>
-2. npm start<br>
+To start the application from source you need to have [NODE.JS](https://nodejs.org/en/) installed, then cd to directory and issue 'npm start' in terminal. Windows users will need to reinstall electron with 'npm install electron' before the 'npm start'.
 
-Linux users needs to run just 'npm start' without need to reinstall electron package (first step).
-
-I'll commit app bundle and installers soon enough, so all those step from above will be needless.
+In distributable directory you can find builds for windows and linux. To start the app from there just double click on storrent executable.<br>
+Installers executables are in installers directory.
 
 New features and improvements will be implemented as time goes by.
 
