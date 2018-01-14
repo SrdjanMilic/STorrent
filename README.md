@@ -20,7 +20,7 @@ You can toggle the state of providers by renaming '...disableProvider...' to '..
 
 This application is still in development. It has a working functionality and can be very useful, as you don't have to visit torrent sites any more for downloading a torrent file.
 
-In the [releases](https://github.com/SrdjanMilic/STorrent/releases) section above, there is distributable builds for linux and windows, and installer file for windows.
+In the [release](https://github.com/SrdjanMilic/STorrent/releases) section, there is distributable builds for linux/windows, and installer file for windows.
 
 To start the application from source, you will need to have [NODE.JS](https://nodejs.org/en/) installed, then cd to directory and run:
 
