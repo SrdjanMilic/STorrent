@@ -3,6 +3,10 @@ body {
   color: #616161;
 }
 
+#fixed-table {
+  /* display: none; */
+}
+
 .input-group {
   width: 60%;
 }

@@ -8,85 +8,171 @@ const $ = require('jquery');
 
 torrentSearch.enableProvider('ThePirateBay');	// public
 torrentSearch.disableProvider('Yggtorrent');	// authentication
-torrentSearch.disableProvider('KickassTorrents');	// public
+torrentSearch.enableProvider('KickassTorrents');	// public
 torrentSearch.enableProvider('TorrentProject');	// public
 torrentSearch.disableProvider('Rarbg');	// public
-torrentSearch.enableProvider('Torrent9');	// public
-torrentSearch.enableProvider('Torrentz2');	// public
+torrentSearch.disableProvider('Torrent9');	// public
+torrentSearch.disableProvider('Torrentz2');	// public
 torrentSearch.disableProvider('IpTorrents');	// authentication
 torrentSearch.disableProvider('TorrentLeech');	// authentication
 torrentSearch.disableProvider('1337x');	// public
-torrentSearch.disableProvider('ExtraTorrent');	// public
+torrentSearch.enableProvider('ExtraTorrent');	// public
 
 let searchTerm = document.getElementById('search-term');
 let buttonClick = document.getElementById('btn-search');
 
-searchTerm.addEventListener('keypress', function enterSearch() {
+searchTerm.addEventListener('keypress', function () {
 	if (event.keyCode === 13) {
 		document.getElementById('spinner').style.display = 'flex';
+				
 		searchResults();
 	}
 });
 
-buttonClick.addEventListener('click', function clickSearch() {
+// function clearForm() {
+// 	document.getElementById('form').reset();
+// }
+// clearForm();
+
+buttonClick.addEventListener('click', function () {
 	document.getElementById('spinner').style.display = 'flex';
 	searchResults();
 });
 
-function searchResults() {
+let resultsTable = document.getElementById('results-output');
 
-	torrentSearch.search(searchTerm.value, '', 5)
+function searchResults() {
+	torrentSearch.search(searchTerm.value, '', 20)
 		.then(torrents => {
 
-			// Dynamic URL creation from JSON output
-			let magnetString = JSON.stringify(torrents['0'].magnet).substr(1).slice(0, -1);
-			let magnetLink = '<a href="' + magnetString + '" class="btn btn-default btn-xs btn-block" role="button"' + '>Download</a>';
+			let table = document.createElement('table');
+			table.className = 'table table-condensed table-bordered table-hover table-striped';
 
-			document.getElementById('title-1').innerHTML = JSON.stringify(torrents['0'].title).substr(1).slice(0, -1);
-			document.getElementById('title-2').innerHTML = JSON.stringify(torrents['1'].title).substr(1).slice(0, -1);
-			document.getElementById('title-3').innerHTML = JSON.stringify(torrents['2'].title).substr(1).slice(0, -1);
-			document.getElementById('title-4').innerHTML = JSON.stringify(torrents['3'].title).substr(1).slice(0, -1);
-			document.getElementById('title-5').innerHTML = JSON.stringify(torrents['4'].title).substr(1).slice(0, -1);
+			let tableBody = document.createElement('tbody');
+			tableBody.id = 'table-body';
 
-			document.getElementById('time-1').innerHTML = JSON.stringify(torrents['0'].time).substr(1).slice(0, -1);
-			document.getElementById('time-2').innerHTML = JSON.stringify(torrents['1'].time).substr(1).slice(0, -1);
-			document.getElementById('time-3').innerHTML = JSON.stringify(torrents['2'].time).substr(1).slice(0, -1);
-			document.getElementById('time-4').innerHTML = JSON.stringify(torrents['3'].time).substr(1).slice(0, -1);
-			document.getElementById('time-5').innerHTML = JSON.stringify(torrents['4'].time).substr(1).slice(0, -1);
+			let tableColumnHeader = document.createElement('thead');
+			let columnHeaderRow = document.createElement('tr');
+			table.appendChild(tableColumnHeader);
+			tableColumnHeader.appendChild(columnHeaderRow);
 
-			// document.getElementById('seeds-1').innerHTML = JSON.stringify(torrents['0'].seeds);
-			// document.getElementById('seeds-2').innerHTML = JSON.stringify(torrents['1'].seeds);
-			// document.getElementById('seeds-3').innerHTML = JSON.stringify(torrents['2'].seeds);
-			// document.getElementById('seeds-4').innerHTML = JSON.stringify(torrents['3'].seeds);
-			// document.getElementById('seeds-5').innerHTML = JSON.stringify(torrents['4'].seeds);
+			for (let th = 0; th < 8; th++) {
+				let columnHeaderCells = document.createElement('th');
+				columnHeaderRow.appendChild(columnHeaderCells);
+			}
 
-			document.getElementById('peers-1').innerHTML = JSON.stringify(torrents['0'].peers);
-			document.getElementById('peers-2').innerHTML = JSON.stringify(torrents['1'].peers);
-			document.getElementById('peers-3').innerHTML = JSON.stringify(torrents['2'].peers);
-			document.getElementById('peers-4').innerHTML = JSON.stringify(torrents['3'].peers);
-			document.getElementById('peers-5').innerHTML = JSON.stringify(torrents['4'].peers);
+			// Create Titles for column
+			let firstCell = table.getElementsByTagName('th')[0];
+			let columnHeaderTextCell1 = document.createTextNode('#');
+			firstCell.appendChild(columnHeaderTextCell1);
 
-			document.getElementById('size-1').innerHTML = JSON.stringify(torrents['0'].size).substr(1).slice(0, -1);
-			document.getElementById('size-2').innerHTML = JSON.stringify(torrents['1'].size).substr(1).slice(0, -1);
-			document.getElementById('size-3').innerHTML = JSON.stringify(torrents['2'].size).substr(1).slice(0, -1);
-			document.getElementById('size-4').innerHTML = JSON.stringify(torrents['3'].size).substr(1).slice(0, -1);
-			document.getElementById('size-5').innerHTML = JSON.stringify(torrents['4'].size).substr(1).slice(0, -1);
+			let secondCell = table.getElementsByTagName('th')[1];
+			let columnHeaderTextCell2 = document.createTextNode('Title');
+			secondCell.appendChild(columnHeaderTextCell2);
 
-			document.getElementById('url-1').innerHTML = magnetLink;
-			document.getElementById('url-2').innerHTML = magnetLink;
-			document.getElementById('url-3').innerHTML = magnetLink;
-			document.getElementById('url-4').innerHTML = magnetLink;
-			document.getElementById('url-5').innerHTML = magnetLink;
+			let thirdCell = table.getElementsByTagName('th')[2];
+			let columnHeaderTextCell3 = document.createTextNode('Date');
+			thirdCell.appendChild(columnHeaderTextCell3);
 
-			document.getElementById('provider-1').innerHTML = JSON.stringify(torrents['0'].provider).substr(1).slice(0, -1);
-			document.getElementById('provider-2').innerHTML = JSON.stringify(torrents['1'].provider).substr(1).slice(0, -1);
-			document.getElementById('provider-3').innerHTML = JSON.stringify(torrents['2'].provider).substr(1).slice(0, -1);
-			document.getElementById('provider-4').innerHTML = JSON.stringify(torrents['3'].provider).substr(1).slice(0, -1);
-			document.getElementById('provider-5').innerHTML = JSON.stringify(torrents['4'].provider).substr(1).slice(0, -1);
+			let fourthCell = table.getElementsByTagName('th')[3];
+			let columnHeaderTextCell4 = document.createTextNode('Seeds');
+			fourthCell.appendChild(columnHeaderTextCell4);
 
-			// Call for torrent objects output used for troubleshooting purposes
-			// let stringify = document.getElementById('json-output-stringify').innerHTML = JSON.stringify(torrents['0']);
-			// document.getElementById('json-output-parse').innerHTML = JSON.parse(stringify);
+			let fifthCell = table.getElementsByTagName('th')[4];
+			let columnHeaderTextCell5 = document.createTextNode('Peers');
+			fifthCell.appendChild(columnHeaderTextCell5);
+
+			let sixthCell = table.getElementsByTagName('th')[5];
+			let columnHeaderTextCell6 = document.createTextNode('Size');
+			sixthCell.appendChild(columnHeaderTextCell6);
+
+			let seventhCell = table.getElementsByTagName('th')[6];
+			let columnHeaderTextCell7 = document.createTextNode('URL');
+			seventhCell.appendChild(columnHeaderTextCell7);
+
+			let eightCell = table.getElementsByTagName('th')[7];
+			let columnHeaderTextCell8 = document.createTextNode('Provider');
+			eightCell.appendChild(columnHeaderTextCell8);
+
+			// creates a table row
+			let titleString = '';
+			let timeString = '';
+			let seedsString = '';
+			for (let row = 0; row < torrents.length; row++) {
+				let rowHeader = document.createElement('th');
+				let rowId = document.createTextNode(row + 1);
+				rowHeader.appendChild(rowId);
+				let tableRow = document.createElement('tr');
+				tableRow.appendChild(rowHeader);
+
+				// Title String 
+				let tableRowData = document.createElement('td');
+				tableRow.appendChild(tableRowData);
+				// tableRowData.id = 'td-id';
+
+				titleString = JSON.stringify(torrents[row].title).substr(1).slice(0, -1);
+				let titleText = document.createTextNode(titleString);
+				tableRowData.appendChild(titleText);
+
+				// Time String
+				let timeRowData = document.createElement('td');
+				tableRow.appendChild(timeRowData);
+
+				timeString = JSON.stringify(torrents[row].time).substr(1).slice(0, -1);
+				let timeText = document.createTextNode(timeString);
+				timeRowData.appendChild(timeText);
+
+				// Seeds String
+				let seedsRowData = document.createElement('td');
+				tableRow.appendChild(seedsRowData);
+
+				seedsString = JSON.stringify(torrents[row].seeds);
+				let seedsText = document.createTextNode(seedsString);
+				seedsRowData.appendChild(seedsText);
+
+				// Peers String
+				let peersRowData = document.createElement('td');
+				tableRow.appendChild(peersRowData);
+
+				let peersString = JSON.stringify(torrents[row].peers);
+				let peersText = document.createTextNode(peersString);
+				peersRowData.appendChild(peersText);
+
+				// Size String
+				let sizeRowData = document.createElement('td');
+				tableRow.appendChild(sizeRowData);
+
+				let sizeString = JSON.stringify(torrents[row].size).substr(1).slice(0, -1);
+				let sizeText = document.createTextNode(sizeString);
+				sizeRowData.appendChild(sizeText);
+
+				// URL String
+				let urlRowData = document.createElement('td');
+				tableRow.appendChild(urlRowData);
+
+				let magnetString = JSON.stringify(torrents[row].magnet).substr(1).slice(0, -1);
+				let createLink = document.createElement('a');
+				createLink.href = magnetString;
+				createLink.setAttribute('class', 'btn btn-default btn-xs btn-block');
+				createLink.setAttribute('role', 'button');
+				createLink.innerHTML = 'Download';
+
+				urlRowData.appendChild(createLink);
+
+				// Provider String
+				let providerRowData = document.createElement('td');
+				tableRow.appendChild(providerRowData);
+
+				let providerString = JSON.stringify(torrents[row].provider).substr(1).slice(0, -1);
+				let providerText = document.createTextNode(providerString);
+				providerRowData.appendChild(providerText);
+
+				// add the row to the end of the table body
+				tableBody.appendChild(tableRow);
+			}
+
+			resultsTable.appendChild(table);
+			table.appendChild(tableBody);
 
 		})
 
@@ -99,8 +185,6 @@ function searchResults() {
 			document.getElementById('spinner').style.display = 'none';
 		});
 }
-
-
 
 // Check for providers
 // document.getElementById('providers').innerHTML = JSON.stringify(torrentSearch.getProviders());
