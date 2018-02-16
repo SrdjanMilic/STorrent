@@ -7,7 +7,7 @@ require('datatables.net-bs')();
 
 torrentSearch.enableProvider('ThePirateBay');	// public
 torrentSearch.disableProvider('Yggtorrent');	// authentication
-torrentSearch.enableProvider('KickassTorrents');	// public
+torrentSearch.disableProvider('KickassTorrents');	// public
 torrentSearch.enableProvider('TorrentProject');	// public
 torrentSearch.enableProvider('Rarbg');	// public
 torrentSearch.disableProvider('Torrent9');	// public
