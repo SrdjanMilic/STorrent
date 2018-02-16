@@ -7,49 +7,73 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>STorrent</title>
 	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
 	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
 
-<body>
+<body id='body'>
 	<h3 id="heading-text">STorrent - Search for torrents on multiple sites</h3>
-
-	<br>
 
 	<div id="form">
 		<div class="input-group">
-			<input type="text" id="search-term" class="form-control" placeholder="Search for...">
+			<input type="text" id="search-term" class="form-control">
 			<span class="input-group-btn">
-				<button id='btn-search' class="btn btn-primary" type="button">Go!</button>
+				<button id='btn-search' class="btn btn-default" type="button">
+					<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+				</button>
 			</span>
 		</div>
 	</div>
 
 	<br>
-	<br>
 
-	<div id="spinner" class="sk-circle">
-		<div class="sk-circle1 sk-child"></div>
-		<div class="sk-circle2 sk-child"></div>
-		<div class="sk-circle3 sk-child"></div>
-		<div class="sk-circle4 sk-child"></div>
-		<div class="sk-circle5 sk-child"></div>
-		<div class="sk-circle6 sk-child"></div>
-		<div class="sk-circle7 sk-child"></div>
-		<div class="sk-circle8 sk-child"></div>
-		<div class="sk-circle9 sk-child"></div>
-		<div class="sk-circle10 sk-child"></div>
-		<div class="sk-circle11 sk-child"></div>
-		<div class="sk-circle12 sk-child"></div>
+	<div id="search-results">
+		
+		<table id="table" class="table table-striped table-bordered table-hover table-condensed">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Title</th>
+					<th>Date</th>
+					<th>Seeds</th>
+					<th>Peers</th>
+					<th>Size</th>
+					<th>URL</th>
+					<th>Provider</th>
+				</tr>
+			</thead>
+
+			<tbody id="tbody">
+				<tr><th>1</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+				<tr><th>2</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+				<tr><th>3</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+				<tr><th>4</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+				<tr><th>5</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+				<tr><th>6</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+				<tr><th>7</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+				<tr><th>8</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+				<tr><th>9</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+				<tr><th>10</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+				<tr><th>11</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+				<tr><th>12</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+				<tr><th>13</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+				<tr><th>14</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+				<tr><th>15</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+			</tbody>
+
+		</table>
+
 	</div>
 
+	<br>
 
-	<div id="results-output"></div>
+	<div id="spinner" class="cssload-aim"></div>
+
+	<div id="overlay"></div>
 
 	<script src="js/myScript.js"></script>
-
-	<!-- JQuery call syntax for node.js environment -->
-	<script>window.$ = window.jQuery = require("jquery");</script>
-
+	<!-- JQuery call for node.js environment -->
+	<!-- <script>window.$ = window.jQuery = require("jquery");</script> -->
 </body>
 
 </html>

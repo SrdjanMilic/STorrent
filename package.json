@@ -23,8 +23,9 @@
     "eslint": "^4.15.0"
   },
   "dependencies": {
-    "torrent-search-api": "^1.0.18",
     "bootstrap": "^3.3.7",
-    "jquery": "^3.2.1"
+    "datatables.net-bs": "^1.10.16",
+    "jquery": "^3.2.1",
+    "torrent-search-api": "^1.0.18"
   }
 }
