@@ -8,8 +8,8 @@ require('datatables.net-bs')();
 torrentSearch.enableProvider('ThePirateBay');	// public
 torrentSearch.disableProvider('Yggtorrent');	// authentication
 torrentSearch.disableProvider('KickassTorrents');	// public
-torrentSearch.enableProvider('TorrentProject');	// public
-torrentSearch.enableProvider('Rarbg');	// public
+torrentSearch.disableProvider('TorrentProject');	// public
+torrentSearch.disableProvider('Rarbg');	// public
 torrentSearch.disableProvider('Torrent9');	// public
 torrentSearch.enableProvider('Torrentz2');	// public
 torrentSearch.disableProvider('IpTorrents');	// authentication
@@ -25,7 +25,12 @@ let table = document.getElementById('table');
 let tBody = document.getElementById('tbody');
 
 let searchTerm = document.getElementById('search-term');
-let buttonClick = document.getElementById('btn-search');
+let buttonSearch = document.getElementById('btn-search');
+let buttonRefresh = document.getElementById('btn-refresh');
+
+buttonRefresh.addEventListener('click', function () {
+	location.reload();
+});
 
 // JQuery detach spinner
 $(spinner).detach();
@@ -42,7 +47,7 @@ searchTerm.addEventListener('keypress', function () {
 	}
 });
 
-buttonClick.addEventListener('click', function () {
+buttonSearch.addEventListener('click', function () {
 	$(overlay).appendTo(body);
 	$(spinner).appendTo(body);
 	searchResults();
@@ -114,7 +119,7 @@ function searchResults() {
 		})
 
 		.then(function () {
-			// delete last extra 15 rows added accidentally (can't figure it out why)
+			// delete last extra 15 rows added generically from fixed table 
 			for (let k = 1; k <= 15; k++) {
 				if (table.rows.length > 16) {
 					let rowCount = table.rows.length;
@@ -142,11 +147,7 @@ function searchResults() {
 			window.location.reload();
 		});	
 
-}		
-
-// Check for providers
-// document.getElementById('providers').innerHTML = JSON.stringify(torrentSearch.getProviders());
-// document.getElementById('active-providers').innerHTML = JSON.stringify(torrentSearch.getActiveProviders());
+}
 
 // DataTables settings
 $.extend($.fn.dataTable.defaults, {
@@ -161,4 +162,8 @@ $('table').DataTable({
 	'pageLength': 15,
 	'lengthMenu': [15, 25, 50, 100],
 });
+
+// Check for providers
+// document.getElementById('providers').innerHTML = JSON.stringify(torrentSearch.getProviders());
+// document.getElementById('active-providers').innerHTML = JSON.stringify(torrentSearch.getActiveProviders());
 

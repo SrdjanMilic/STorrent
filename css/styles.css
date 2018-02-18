@@ -2,17 +2,25 @@ body {
   padding: 0 8px;
 }
 
+#form-wrapper {
+  display: flex;
+}
+
+#btn-refresh {
+  margin-left: 1%;
+}
+
 /* spinner */
 
 .cssload-aim {
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 85px;
+  height: 85px;
   left: 45%;
   top: 45%;
   border-radius: 50px;
   background-color: transparent;
-  border-width: 40px;
+  border-width: 25px;
   border-style: double;
   border-color: transparent #333;
   box-sizing: border-box;
@@ -50,10 +58,6 @@ td:nth-child(3), td:nth-child(6) {
 }
 
 /* Overwrite dataTables classes */
-
-table.dataTable thead .sorting:after, table.dataTable thead .sorting_asc:after, table.dataTable thead .sorting_desc:after, table.dataTable thead .sorting_asc_disabled:after, table.dataTable thead .sorting_desc_disabled:after {
-  opacity: 0.2 !important;
-}
 
 /* Overwrite bootstrap classes */
 .row {
