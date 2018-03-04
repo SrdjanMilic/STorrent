@@ -1,6 +1,13 @@
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
 const url = require('url');
+require('electron-context-menu')({
+	prepend: (params) => [{
+		label: 'Rainbow',
+		// Only show it when right-clicking images
+		visible: params.mediaType === 'image'
+	}]
+});
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -8,7 +15,7 @@ let win;
 
 function createWindow() {
 	// Create the browser window.
-	win = new BrowserWindow({ width: 1180, height: 780, show: false, icon: 'images/storrent.ico'});
+	win = new BrowserWindow({ width: 1150, height: 750, show: false, icon: 'images/storrent.ico'});
 
 	// and load the index.html of the app.
 	win.loadURL(url.format({
@@ -50,3 +57,4 @@ app.on('window-all-closed', () => {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+

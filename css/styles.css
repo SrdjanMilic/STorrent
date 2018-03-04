@@ -2,12 +2,22 @@ body {
   padding: 0 8px;
 }
 
+#heading-text {
+  font-size: 1.3em;
+  font-weight: bold;
+  margin: 12px 0;
+}
+
 #form-wrapper {
   display: flex;
 }
 
 #btn-refresh {
   margin-left: 1%;
+}
+
+tr {
+  font-size: 91%;
 }
 
 /* spinner */
@@ -20,9 +30,9 @@ body {
   top: 45%;
   border-radius: 50px;
   background-color: transparent;
-  border-width: 25px;
+  border-width: 30px;
   border-style: double;
-  border-color: transparent #333;
+  border-color: transparent #fff;
   box-sizing: border-box;
   transform-origin: 50% 50%;
   animation: cssload-aim 0.7s linear infinite;
@@ -44,8 +54,8 @@ body {
   height: 100%;
   left: 0;
   top: 0;
-  background: #f9f9f9;
-  /* background: hsla(0, 0%, 20%, 0.7); */
+  /* background: #f9f9f9; */
+  background: hsla(0, 0%, 20%, 0.7);
   z-index: 10;
 }
 
@@ -71,3 +81,4 @@ td:nth-child(3), td:nth-child(6) {
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
   vertical-align: middle !important;
 }
+

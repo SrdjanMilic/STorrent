@@ -11,7 +11,7 @@ torrentSearch.disableProvider('KickassTorrents');	// public
 torrentSearch.disableProvider('TorrentProject');	// public
 torrentSearch.disableProvider('Rarbg');	// public
 torrentSearch.disableProvider('Torrent9');	// public
-torrentSearch.enableProvider('Torrentz2');	// public
+torrentSearch.disableProvider('Torrentz2');	// public
 torrentSearch.disableProvider('IpTorrents');	// authentication
 torrentSearch.disableProvider('TorrentLeech');	// authentication
 torrentSearch.disableProvider('1337x');	// public
@@ -28,6 +28,10 @@ let searchTerm = document.getElementById('search-term');
 let buttonSearch = document.getElementById('btn-search');
 let buttonRefresh = document.getElementById('btn-refresh');
 
+function tableDestroy() {
+	$('#table').DataTable().destroy();
+}
+
 buttonRefresh.addEventListener('click', function () {
 	location.reload();
 });
@@ -36,24 +40,20 @@ buttonRefresh.addEventListener('click', function () {
 $(spinner).detach();
 $(overlay).detach();
 
-searchTerm.addEventListener('keypress', function () {
+searchTerm.addEventListener('keypress', function() {
 	if (event.keyCode === 13) {
 		$(spinner).appendTo(body);
 		$(overlay).appendTo(body);
+		tableDestroy();
 		searchResults();
-
-		let dataTableApi = $('#table').DataTable();
-		dataTableApi.destroy();
 	}
 });
 
-buttonSearch.addEventListener('click', function () {
+buttonSearch.addEventListener('click', function() {
 	$(overlay).appendTo(body);
 	$(spinner).appendTo(body);
+	$('#table').DataTable().destroy();
 	searchResults();
-	
-	let dataTableApi = $('#table').DataTable();
-	dataTableApi.destroy();
 });
 
 function searchResults() {
@@ -144,7 +144,7 @@ function searchResults() {
 			$(overlay).detach();
 			$(spinner).detach();
 			$(body).remove();
-			window.location.reload();
+			location.reload();
 		});	
 
 }
