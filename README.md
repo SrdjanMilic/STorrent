@@ -16,7 +16,7 @@ Torrent search providers by default are:
 10. 1337x - disabled (public)
 11. ExtraTorrent - enabledd (public)
 
-You can toggle the state of providers by renaming "...disableProvider..." to "...enableProvider..." in js/myScript.js file. Please note, if there are many providers are enabled, waiting for search results prolongs a bit.
+You can toggle the state of providers by renaming "...disableProvider..." to "...enableProvider..." in js/myScript.js file. Please note, if there are many providers enabled, waiting for search results could prolongs a bit.
 
 One more thing: before every new search, you will need to manually hit the reload button each time, until I implement a solution for that issue. It's not needed to do that after you get an error alert.
 
