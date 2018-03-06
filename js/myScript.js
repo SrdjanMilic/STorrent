@@ -5,9 +5,9 @@ require('datatables.net-bs')();
 
 // Search providers
 
-torrentSearch.enableProvider('ThePirateBay');	// public
+torrentSearch.disableProvider('ThePirateBay');	// public
 torrentSearch.disableProvider('Yggtorrent');	// authentication
-torrentSearch.disableProvider('KickassTorrents');	// public
+torrentSearch.enableProvider('KickassTorrents');	// public
 torrentSearch.disableProvider('TorrentProject');	// public
 torrentSearch.disableProvider('Rarbg');	// public
 torrentSearch.disableProvider('Torrent9');	// public
@@ -28,7 +28,7 @@ let buttonSearch = document.getElementById('btn-search');
 let buttonRefresh = document.getElementById('btn-refresh');
 
 function removeTable() {
-	$('#table-wrapper').detach();
+	$('#table-wrapper').remove();
 }
 
 buttonRefresh.addEventListener('click', function () {
@@ -43,11 +43,11 @@ searchTerm.addEventListener('keypress', function() {
 	if (event.keyCode === 13) {
 		$(spinner).appendTo(body);
 		$(overlay).appendTo(body);
-		$('#DataTables_Table_0_wrapper').detach();
-		$('#DataTables_Table_1_wrapper').detach();
-		$('#DataTables_Table_2_wrapper').detach();
-		$('#DataTables_Table_4_wrapper').detach();
-		$('#DataTables_Table_5_wrapper').detach();
+		$('#DataTables_Table_0_wrapper').remove();
+		$('#DataTables_Table_1_wrapper').remove();
+		$('#DataTables_Table_2_wrapper').remove();
+		$('#DataTables_Table_4_wrapper').remove();
+		$('#DataTables_Table_5_wrapper').remove();
 		removeTable();
 		searchResults();
 	}

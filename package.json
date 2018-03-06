@@ -18,15 +18,15 @@
     "icons": "node_modules/.bin/electron-icon-maker --input=images/storrent.png --output=images"
   },
   "devDependencies": {
-    "electron": "^1.7.10",
+    "electron": "^1.8.3",
     "electron-icon-maker": "0.0.4",
-    "eslint": "^4.15.0"
+    "eslint": "^4.18.2"
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
     "datatables.net-bs": "^1.10.16",
     "electron-context-menu": "^0.9.1",
     "jquery": "^3.2.1",
-    "torrent-search-api": "^1.0.18"
+    "torrent-search-api": "^1.0.27"
   }
 }
