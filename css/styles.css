@@ -4,7 +4,7 @@ body {
 
 #form-wrapper {
   display: flex;
-  margin-bottom: 8px;
+  margin: 16px 0 8px;
 }
 
 #btn-refresh {
@@ -13,6 +13,10 @@ body {
 
 tr {
   font-size: 91%;
+}
+
+td {
+  word-wrap: break-word;
 }
 
 /* spinner */

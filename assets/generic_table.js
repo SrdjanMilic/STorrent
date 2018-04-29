@@ -1,74 +1,6 @@
-const TorrentSearchApi = require('torrent-search-api');
-const torrentSearch = new TorrentSearchApi();
-const $ = require('jquery');
-require('datatables.net-bs')();
-
-// Search providers
-
-torrentSearch.enableProvider('ThePirateBay');	// public
-torrentSearch.disableProvider('Yggtorrent');	// authentication
-torrentSearch.disableProvider('KickassTorrents');	// public
-torrentSearch.disableProvider('TorrentProject');	// public
-torrentSearch.enableProvider('Rarbg');	// public
-torrentSearch.enableProvider('Torrent9');	// public
-torrentSearch.enableProvider('Torrentz2');	// public
-torrentSearch.disableProvider('IpTorrents');	// authentication
-torrentSearch.disableProvider('TorrentLeech');	// authentication
-torrentSearch.disableProvider('1337x');	// public
-torrentSearch.enableProvider('ExtraTorrent');	// public
-
-let body = document.getElementById('body');
-let spinner = document.getElementById('spinner');
-let overlay = document.getElementById('overlay');
-
-let tableResults = document.getElementById('table-results');
-
-let searchTerm = document.getElementById('search-term');
-let buttonSearch = document.getElementById('btn-search');
-let buttonRefresh = document.getElementById('btn-refresh');
-
-function removeTable() {
-	$('#table-wrapper').remove();
-}
-
-buttonRefresh.addEventListener('click', function () {
-	location.reload();
-});
-
-// JQuery detach spinner
-$(spinner).detach();
-$(overlay).detach();
-
-searchTerm.addEventListener('keypress', function() {
-	if (event.keyCode === 13) {
-		$(spinner).appendTo(body);
-		$(overlay).appendTo(body);
-		$('#DataTables_Table_0_wrapper').remove();
-		$('#DataTables_Table_1_wrapper').remove();
-		$('#DataTables_Table_2_wrapper').remove();
-		$('#DataTables_Table_4_wrapper').remove();
-		$('#DataTables_Table_5_wrapper').remove();
-		removeTable();
-		searchResults();
-	}
-});
-
-buttonSearch.addEventListener('click', function() {
-	$(overlay).appendTo(body);
-	$(spinner).appendTo(body);
-	$('#DataTables_Table_0_wrapper').remove();
-	$('#DataTables_Table_1_wrapper').remove();
-	$('#DataTables_Table_2_wrapper').remove();
-	$('#DataTables_Table_4_wrapper').remove();
-	$('#DataTables_Table_5_wrapper').remove();
-	removeTable();
-	searchResults();
-});
-
 function searchResults() {
 	torrentSearch.search(searchTerm.value, '', '')
 		.then(torrents => {
-
 			let table = document.createElement('table');
 			table.className = 'table table-condensed table-bordered table-hover table-striped';
 
@@ -195,48 +127,17 @@ function searchResults() {
 				tableBody.appendChild(tableRow);
 			}
 
-			tableResults.appendChild(table);
+			resultsTable.appendChild(table);
 			table.appendChild(tableBody);
 
 		})
 
 		.then(function () {
-			$('table').DataTable({
-				'autoWidth': false,
-				'lengthChange': true,
-				'pageLength': 15,
-				'lengthMenu': [15, 25, 50, 100]
-			});
-
-			$(overlay).detach();
-			$(spinner).detach();
-		})	
+			document.getElementById('spinner').style.display = 'none';
+		})
 
 		.catch(err => {
 			window.alert('Error occurred!' + '\r\n' + err + '\r\n' + 'Please, try again.');
-			$(overlay).detach();
-			$(spinner).detach();
-			$(body).remove();
-			location.reload();
-		});	
-
+			document.getElementById('spinner').style.display = 'none';
+		});
 }
-
-// DataTables settings
-$.extend($.fn.dataTable.defaults, {
-	searching: true,
-	ordering: true,
-	retrieve: true
-});	
-
-$('table').DataTable({
-	'autoWidth': false,
-	'lengthChange': true,
-	'pageLength': 15,
-	'lengthMenu': [15, 25, 50, 100],
-});
-
-// Check for providers
-// document.getElementById('providers').innerHTML = JSON.stringify(torrentSearch.getProviders());
-// document.getElementById('active-providers').innerHTML = JSON.stringify(torrentSearch.getActiveProviders());
-
