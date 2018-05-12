@@ -18,7 +18,7 @@ Torrent search providers by default are:
 
 You can toggle the state of providers by renaming "...disableProvider..." to "...enableProvider..." in js/myScript.js file. Please note, if there are many providers enabled, waiting for search results could prolongs a bit.
 
-One more thing: before every new search, you will need to manually hit the reload button each time, until I implement a solution for that issue. It's not needed to do that after you get an error alert.
+One more thing: after five consecutive searches, you will need to manually hit the reload button each time, until I implement a solution for that issue.
 
 In the [release](https://github.com/SrdjanMilic/STorrent/releases) section, there is distributable builds for Linux/Windows. If you want to run app from distributable build, just double click on "storrent" executable in root directory.
 
