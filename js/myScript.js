@@ -9,7 +9,7 @@ torrentSearch.enableProvider('ThePirateBay');	// public
 torrentSearch.disableProvider('Yggtorrent');	// authentication
 torrentSearch.disableProvider('KickassTorrents');	// public
 torrentSearch.disableProvider('TorrentProject');	// public
-torrentSearch.enableProvider('Rarbg');	// public
+torrentSearch.disableProvider('Rarbg');	// public
 torrentSearch.enableProvider('Torrent9');	// public
 torrentSearch.enableProvider('Torrentz2');	// public
 torrentSearch.disableProvider('IpTorrents');	// authentication
@@ -48,7 +48,7 @@ searchTerm.addEventListener('keypress', function() {
 		$('#DataTables_Table_2_wrapper').remove();
 		$('#DataTables_Table_4_wrapper').remove();
 		$('#DataTables_Table_5_wrapper').remove();
-		removeTable();
+                removeTable();
 		searchResults();
 	}
 });
@@ -61,7 +61,7 @@ buttonSearch.addEventListener('click', function() {
 	$('#DataTables_Table_2_wrapper').remove();
 	$('#DataTables_Table_4_wrapper').remove();
 	$('#DataTables_Table_5_wrapper').remove();
-	removeTable();
+        removeTable();
 	searchResults();
 });
 

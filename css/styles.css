@@ -1,5 +1,6 @@
 body {
   padding: 0 8px;
+  font-size: 13px !important;
 }
 
 #form-wrapper {
@@ -9,10 +10,6 @@ body {
 
 #btn-refresh {
   margin-left: 1%;
-}
-
-tr {
-  font-size: 91%;
 }
 
 td {
@@ -85,5 +82,9 @@ td:nth-child(3), td:nth-child(6) {
 
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
   vertical-align: middle !important;
+}
+
+.table-condensed>tbody>tr>td, .table-condensed>tfoot>tr>td, .table-condensed>thead>tr>td {
+    padding: 3px !important;
 }
 
