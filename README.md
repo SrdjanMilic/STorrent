@@ -18,9 +18,9 @@ Torrent search providers by default are:
 
 You can toggle the state of providers by renaming "...disableProvider..." to "...enableProvider..." in js/myScript.js file. Please note, if there are many providers enabled, waiting for search results could prolongs a bit.
 
-One more thing: before every new search, you will need to manually hit the reload button each time, until I implement a solution for that issue. It's not needed to do that after you get an error alert.
+One more thing: after five consecutive searches, you will need to manually hit the reload button each time, until I implement a solution for that issue.
 
-In the [release](https://github.com/SrdjanMilic/STorrent/releases) section, there is distributable builds for Linux/Windows, and installer file for Windows. If you want to run app from distributable build, just double click on "storrent" executable in root directory. Installer for Windows works like expected, although due to the module compiler, app executable ends up in the "...AppData\Local\storrent\" and not in the "...\Program Files\" like it should be.
+In the [release](https://github.com/SrdjanMilic/STorrent/releases) section, there is distributable builds for Linux/Windows. If you want to run app from distributable build, just double click on "storrent" executable in root directory.
 
 To locally start the application from source, you will need to have [node.js](https://nodejs.org/en/) installed, then cd to directory and run:
 
