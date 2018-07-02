@@ -9,29 +9,25 @@ torrentSearch.enableProvider('ThePirateBay');	// public
 torrentSearch.disableProvider('Yggtorrent');	// authentication
 torrentSearch.disableProvider('KickassTorrents');	// public
 torrentSearch.disableProvider('TorrentProject');	// public
-torrentSearch.disableProvider('Rarbg');	// public
-torrentSearch.enableProvider('Torrent9');	// public
-torrentSearch.enableProvider('Torrentz2');	// public
+torrentSearch.enableProvider('Rarbg');	// public
+torrentSearch.disableProvider('Torrent9');	// public
+torrentSearch.disableProvider('Torrentz2');	// public
 torrentSearch.disableProvider('IpTorrents');	// authentication
 torrentSearch.disableProvider('TorrentLeech');	// authentication
 torrentSearch.disableProvider('1337x');	// public
-torrentSearch.enableProvider('ExtraTorrent');	// public
+torrentSearch.disableProvider('ExtraTorrent');	// public
 
 let body = document.getElementById('body');
 let spinner = document.getElementById('spinner');
 let overlay = document.getElementById('overlay');
-
 let tableResults = document.getElementById('table-results');
-
 let searchTerm = document.getElementById('search-term');
-let buttonSearch = document.getElementById('btn-search');
-let buttonRefresh = document.getElementById('btn-refresh');
 
 function removeTable() {
 	$('#table-wrapper').remove();
 }
 
-buttonRefresh.addEventListener('click', function () {
+document.getElementById('btn-refresh').addEventListener('click', function() {
 	location.reload();
 });
 
@@ -48,12 +44,12 @@ searchTerm.addEventListener('keypress', function() {
 		$('#DataTables_Table_2_wrapper').remove();
 		$('#DataTables_Table_4_wrapper').remove();
 		$('#DataTables_Table_5_wrapper').remove();
-                removeTable();
+        removeTable();
 		searchResults();
 	}
 });
 
-buttonSearch.addEventListener('click', function() {
+document.getElementById('btn-search').addEventListener('click', function() {
 	$(overlay).appendTo(body);
 	$(spinner).appendTo(body);
 	$('#DataTables_Table_0_wrapper').remove();
@@ -61,7 +57,7 @@ buttonSearch.addEventListener('click', function() {
 	$('#DataTables_Table_2_wrapper').remove();
 	$('#DataTables_Table_4_wrapper').remove();
 	$('#DataTables_Table_5_wrapper').remove();
-        removeTable();
+    removeTable();
 	searchResults();
 });
 

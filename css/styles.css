@@ -1,6 +1,7 @@
 body {
   padding: 0 8px;
   font-size: 13px !important;
+  line-height: 1.5 !important;
 }
 
 #form-wrapper {
@@ -14,6 +15,10 @@ body {
 
 td {
   word-wrap: break-word;
+}
+
+th {
+	text-align: center !important;
 }
 
 /* spinner */
