@@ -44,7 +44,7 @@ searchTerm.addEventListener('keypress', function() {
 		$('#DataTables_Table_2_wrapper').remove();
 		$('#DataTables_Table_4_wrapper').remove();
 		$('#DataTables_Table_5_wrapper').remove();
-        removeTable();
+		removeTable();
 		searchResults();
 	}
 });
@@ -57,7 +57,7 @@ document.getElementById('btn-search').addEventListener('click', function() {
 	$('#DataTables_Table_2_wrapper').remove();
 	$('#DataTables_Table_4_wrapper').remove();
 	$('#DataTables_Table_5_wrapper').remove();
-    removeTable();
+	removeTable();
 	searchResults();
 });
 
