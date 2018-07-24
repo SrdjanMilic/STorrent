@@ -5,17 +5,17 @@ require('datatables.net-bs')();
 
 // Search providers
 
-torrentSearch.enableProvider('ThePirateBay');	// public
-torrentSearch.disableProvider('Yggtorrent');	// authentication
-torrentSearch.disableProvider('KickassTorrents');	// public
-torrentSearch.disableProvider('TorrentProject');	// public
-torrentSearch.enableProvider('Rarbg');	// public
-torrentSearch.disableProvider('Torrent9');	// public
-torrentSearch.disableProvider('Torrentz2');	// public
-torrentSearch.disableProvider('IpTorrents');	// authentication
-torrentSearch.disableProvider('TorrentLeech');	// authentication
-torrentSearch.disableProvider('1337x');	// public
-torrentSearch.disableProvider('ExtraTorrent');	// public
+torrentSearch.enableProvider('ThePirateBay'); // public
+torrentSearch.disableProvider('Yggtorrent'); // authentication
+torrentSearch.disableProvider('KickassTorrents'); // public
+torrentSearch.disableProvider('TorrentProject'); // public
+torrentSearch.enableProvider('Rarbg'); // public
+torrentSearch.disableProvider('Torrent9'); // public
+torrentSearch.disableProvider('Torrentz2'); // public
+torrentSearch.disableProvider('IpTorrents'); // authentication
+torrentSearch.disableProvider('TorrentLeech'); // authentication
+torrentSearch.disableProvider('1337x'); // public
+torrentSearch.disableProvider('ExtraTorrent'); // public
 
 let body = document.getElementById('body');
 let spinner = document.getElementById('spinner');
@@ -52,6 +52,8 @@ searchTerm.addEventListener('keypress', function() {
 document.getElementById('btn-search').addEventListener('click', function() {
 	$(overlay).appendTo(body);
 	$(spinner).appendTo(body);
+	// Remove search results after consecutive search.
+	// It's not a final solution. Need to be fixed.
 	$('#DataTables_Table_0_wrapper').remove();
 	$('#DataTables_Table_1_wrapper').remove();
 	$('#DataTables_Table_2_wrapper').remove();
@@ -65,6 +67,7 @@ function searchResults() {
 	torrentSearch.search(searchTerm.value, '', '')
 		.then(torrents => {
 
+			// Dynamic table creation
 			let table = document.createElement('table');
 			table.className = 'table table-condensed table-bordered table-hover table-striped';
 
@@ -196,7 +199,7 @@ function searchResults() {
 
 		})
 
-		.then(function () {
+		.then(function() {
 			$('table').DataTable({
 				'autoWidth': false,
 				'lengthChange': true,
@@ -206,7 +209,7 @@ function searchResults() {
 
 			$(overlay).detach();
 			$(spinner).detach();
-		})	
+		})
 
 		.catch(err => {
 			window.alert('Error occurred!' + '\r\n' + err + '\r\n' + 'Please, try again.');
@@ -214,7 +217,7 @@ function searchResults() {
 			$(spinner).detach();
 			$(body).remove();
 			location.reload();
-		});	
+		});
 
 }
 
@@ -223,7 +226,7 @@ $.extend($.fn.dataTable.defaults, {
 	searching: true,
 	ordering: true,
 	retrieve: true
-});	
+});
 
 $('table').DataTable({
 	'autoWidth': false,
@@ -235,4 +238,3 @@ $('table').DataTable({
 // Check for providers
 // document.getElementById('providers').innerHTML = JSON.stringify(torrentSearch.getProviders());
 // document.getElementById('active-providers').innerHTML = JSON.stringify(torrentSearch.getActiveProviders());
-

@@ -1,95 +1,94 @@
 body {
-  padding: 0 8px;
-  font-size: 13px !important;
-  line-height: 1.5 !important;
+    padding: 0 8px;
+    font-size: 13px !important;
+    line-height: 1.5 !important;
 }
 
 #form-wrapper {
-  display: flex;
-  margin: 16px 0 8px;
+    display: flex;
+    margin: 16px 0 8px;
 }
 
 #btn-refresh {
-  margin-left: 1%;
+    margin-left: 1%;
 }
 
 td {
-  word-wrap: break-word;
+    word-wrap: break-word;
 }
 
 th {
-	text-align: center !important;
+    text-align: center !important;
 }
 
 /* spinner */
 
 .cssload-aim {
-  position: absolute;
-  width: 90px;
-  height: 90px;
-  left: 45%;
-  top: 45%;
-  border-radius: 50px;
-  background-color: transparent;
-  border-width: 20px;
-  border-style: double;
-  border-color: transparent #fff;
-  /* border-color: transparent #333; */
-  box-sizing: border-box;
-  transform-origin: 50% 50%;
-  animation: cssload-aim 0.5s linear infinite;
-  z-index: 10000;
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    left: 45%;
+    top: 45%;
+    border-radius: 50px;
+    background-color: transparent;
+    border-width: 20px;
+    border-style: double;
+    border-color: transparent #fff;
+    /* border-color: transparent #333; */
+    box-sizing: border-box;
+    transform-origin: 50% 50%;
+    animation: cssload-aim 0.5s linear infinite;
+    z-index: 10000;
 }
 
 @keyframes cssload-aim {
-  0% {
-      transform: rotate(0deg);
- }
-  100% {
-      transform: rotate(360deg);
- }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 #overlay {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  /* background: #f9f9f9; */
-  background: hsla(0, 0%, 20%, 0.8);
-  z-index: 10;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    /* background: #f9f9f9; */
+    background: hsla(0, 0%, 20%, 0.8);
+    z-index: 10;
 }
 
-#tbody td:first-of-type,
-#fixed-table td:first-of-type {
-width: 100%;
+#tbody td:first-of-type, #fixed-table td:first-of-type {
+    width: 100%;
 }
 
 td:nth-child(3), td:nth-child(6) {
-  white-space: nowrap;
+    white-space: nowrap;
 }
 
 /* Overwrite dataTables classes */
 
 /* Overwrite bootstrap classes */
+
 .row {
-  margin: 0 !important;
+    margin: 0 !important;
 }
 
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
-  padding: 0 !important;
+    padding: 0 !important;
 }
 
 .table {
-  margin-bottom: 8px !important;
+    margin-bottom: 8px !important;
 }
 
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
-  vertical-align: middle !important;
+    vertical-align: middle !important;
 }
 
 .table-condensed>tbody>tr>td, .table-condensed>tfoot>tr>td, .table-condensed>thead>tr>td {
     padding: 3px !important;
 }
-
