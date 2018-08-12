@@ -19,19 +19,19 @@
     "win64": "electron ./packager.js --overwrite=true"
   },
   "devDependencies": {
-    "electron": "^1.8.6",
+    "electron": "^1.8.7",
     "electron-icon-maker": "0.0.4",
     "eslint": "^4.19.1"
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
-    "datatables.net-bs": "^1.10.16",
+    "datatables.net-bs": "^1.10.19",
     "electron-context-menu": "^0.9.1",
     "https-proxy-agent": "^2.2.1",
     "jquery": "^3.2.1",
     "lodash": "^4.17.10",
-    "npm": "^6.0.1",
-    "torrent-search-api": "^1.1.2",
+    "npm": "^6.3.0",
+    "torrent-search-api": "^1.1.5",
     "x-ray-crawler": "^2.0.3"
   }
 }
