@@ -2,215 +2,216 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>STorrent</title>
-	<link rel="stylesheet" href="css/styles.css">
-	<link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
-	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>STorrent</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
 
 <body id='body'>
 
-	<div id="form-wrapper">
-		<div id="form">
-			<div class="input-group">
-				<input type="text" id="search-term" class="form-control">
-				<span class="input-group-btn">
-			<button id='btn-search' class="btn btn-default" type="button">
-			<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-				</button>
-				</span>
-			</div>
-		</div>
+    <div id="form-wrapper">
+        <div id="form">
+            <div class="input-group">
+                <input type="text" id="search-term" class="form-control">
+                <span class="input-group-btn">
+                    <button id='btn-search' class="btn btn-default" type="button">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </button>
+                </span>
+            </div>
+        </div>
 
-		<button id='btn-refresh' class="btn btn-default" type="button">
-		<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
-	</button>
+        <button id='btn-refresh' class="btn btn-default" type="button">
+            <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+        </button>
 
-	</div>
+    </div>
 
-	<div id="spinner" class="cssload-aim"></div>
+    <div id="spinner" class="cssload-aim"></div>
 
-	<div id="overlay"></div>
+    <!-- <div id="overlay"></div> -->
 
-	<!- Static table for the app start page. It can be whatever you want. ->
-	<div id="table-wrapper">
-		<table id="fixed-table" class="table table-striped table-bordered table-hover table-condensed">
-			<thead>
-				<tr>
-					<th>#</th>
-					<th>Title</th>
-					<th>Date</th>
-					<th>Seeds</th>
-					<th>Peers</th>
-					<th>Size</th>
-					<th>URL</th>
-					<th>Provider</th>
-				</tr>
-			</thead>
+    <!-- Static table for the app start page. It can be whatever you want. -->
+    <div id="table-wrapper">
+        <table id="fixed-table" class="table table-striped table-bordered table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Title</th>
+                    <th>Date</th>
+                    <th>Seeds</th>
+                    <th>Peers</th>
+                    <th>Size</th>
+                    <th>URL</th>
+                    <th>Provider</th>
+                </tr>
+            </thead>
 
-			<tbody>
-				<tr>
-					<th>1</th>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<th>2</th>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<th>3</th>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<th>4</th>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<th>5</th>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<th>6</th>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<th>7</th>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<th>8</th>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<th>9</th>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<th>10</th>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<th>11</th>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<th>12</th>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<th>13</th>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<th>14</th>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<th>15</th>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-			</tbody>
+            <tbody>
+                <tr>
+                    <th>1</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>4</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>5</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>6</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>7</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>8</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>9</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>10</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>11</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>12</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>13</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>14</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>15</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
 
-		</table>
-	</div>
+        </table>
+    </div>
 
-	<!- Container for dinamic table search results ->
-	<div id="table-results"></div>
+    <!-- Container for dinamic table search results. -->
+    <div id="table-results"></div>
 
-	<script src="js/myScript.js"></script>
+    <script src="js/myScript.js"></script>
+    <!-- <script>window.$ = window.jQuery = require("jquery");</script> -->
 
 </body>
 
