@@ -23,9 +23,11 @@ To locally start the application from source, you will need to have [node.js](ht
 1. npm update
 2. npm start
 
+<br>
 
 In section [release](https://github.com/SrdjanMilic/STorrent/releases), there is distributable builds for Linux and Windows. If you want to run app from distributable build, just double click on "storrent" executable in root directory. Distributables should soon be updated to a newest versions as well.
 
+<br>
 
-STorrent is based on 'torrent-search-api' by [Jimmy Laurent](https://github.com/JimmyLaurent/torrent-search-api).
+STorrent is based on 'torrent-search-api' by [Jimmy Laurent](https://github.com/JimmyLaurent/torrent-search-api). <br>
 You can follow up above link for more options and configurations.
