@@ -16,9 +16,9 @@ torrentSearch.enableProvider("Rarbg") // public (fast response) <br>
 torrentSearch.disableProvider("TorrentProject") // public <br>
 torrentSearch.disableProvider("ExtraTorrent") // public (fast response)
 
-Only "Rarbg" provider is enabled by default. You can toggle the state of providers by renaming "...disableProvider..." to "...enableProvider..." in js/myScript.js file. Please note, if there are many providers enabled, waiting for search results could prolongs a bit.
+Only "Rarbg" provider is enabled by default. You can toggle the state of providers by renaming "...disableProvider..." to "...enableProvider..." in js/index.js file. Please note, if there is many providers enabled, waiting for search results could prolongs a bit.
 
-To locally start the application from source, you will need to have [node.js](https://nodejs.org/en/) installed, then cd to directory and run:
+To locally start the application from source, you will need to have [node.js](https://nodejs.org/en/) installed, then just cd to directory and run:
 
 1. npm update
 2. npm start
