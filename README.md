@@ -1,32 +1,31 @@
-# STorrent - Search for torrents on multiple sites
+# STorrent - Search for torrents with multiple providers
 
 **Electron multi platform desktop application**
 
-Torrent search providers by default are:
+Torrent search providers are:
 
-1. ThePirateBay - enabled (public)
-2. Yggtorrent - disabled (authentication)
-3. KickassTorrents - disabled (public)
-4. TorrentProject - disabled (public)
-5. Rarbg - disabled (public)
-6. Torrent9 - disabled (public)
-7. Torrentz2 - enabled (public)
-8. IpTorrents - disabled (authentication)
-9. TorrentLeech - disabled (authentication)
-10. 1337x - disabled (public)
-11. ExtraTorrent - enabledd (public)
+torrentSearch.disableProvider("TorrentLeech") // authentication
+torrentSearch.disableProvider("IpTorrents") // authentication
+torrentSearch.disableProvider("Torrent9") // public
+torrentSearch.disableProvider("Torrentz2") // public
+torrentSearch.disableProvider("1337x") // public (fast response)
+torrentSearch.disableProvider("ThePirateBay") // public
+torrentSearch.disableProvider("Yggtorrent") // authentication
+torrentSearch.disableProvider("KickassTorrents") // public
+torrentSearch.enableProvider("Rarbg") // public (fast response)
+torrentSearch.disableProvider("TorrentProject") // public
+torrentSearch.disableProvider("ExtraTorrent") // public (fast response)
 
-You can toggle the state of providers by renaming "...disableProvider..." to "...enableProvider..." in js/myScript.js file. Please note, if there are many providers enabled, waiting for search results could prolongs a bit.
-
-One more thing: after five consecutive searches, you will need to manually hit the reload button each time, until I implement a solution for that issue.
-
-In the [release](https://github.com/SrdjanMilic/STorrent/releases) section, there is distributable builds for Linux/Windows. If you want to run app from distributable build, just double click on "storrent" executable in root directory.
+Only "Rarbg" provider is enabled by default. You can toggle the state of providers by renaming "...disableProvider..." to "...enableProvider..." in js/myScript.js file. Please note, if there are many providers enabled, waiting for search results could prolongs a bit.
 
 To locally start the application from source, you will need to have [node.js](https://nodejs.org/en/) installed, then cd to directory and run:
 
 1. npm update
 2. npm start
 
-New improvements and fixes will be implemented as time goes by.
+---
+
+In section [release](https://github.com/SrdjanMilic/STorrent/releases), there is distributable builds for Linux and Windows. If you want to run app from distributable build, just double click on "storrent" executable in root directory. Distributables should soon be updated to a newest versions as well.
 
 STorrent is based on 'torrent-search-api' by [Jimmy Laurent](https://github.com/JimmyLaurent/torrent-search-api).
+You can follow up above link for more options and configurations.
