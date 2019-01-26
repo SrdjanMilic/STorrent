@@ -26,6 +26,7 @@
   "dependencies": {
     "ajv": "^6.7.0",
     "bootstrap": "^4.2.1",
+    "cryptiles": "^4.1.2",
     "datatables.net": "^1.10.19",
     "datatables.net-bs4": "^1.10.19",
     "electron-context-menu": "^0.9.1",
