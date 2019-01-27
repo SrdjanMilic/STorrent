@@ -19,14 +19,14 @@
     "win64": "electron ./packager.js --overwrite=true"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.6.3",
+    "cryptiles": "^4.1.2",
     "electron": "^4.0.2",
     "electron-icon-maker": "0.0.4"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.6.3",
     "ajv": "^6.7.0",
     "bootstrap": "^4.2.1",
-    "cryptiles": "^4.1.2",
     "datatables.net": "^1.10.19",
     "datatables.net-bs4": "^1.10.19",
     "electron-context-menu": "^0.9.1",
