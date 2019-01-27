@@ -144,15 +144,15 @@ let newSearch = () => {
 // Event Listeners
 searchTerm.addEventListener("keypress", () => {
   if (event.keyCode === 13) {
-    $("#fakeLoader").removeAttr("style") // this is neded for loader function to fire each time
-    $(".form").removeAttr("id")
+    $("#fakeLoader").removeAttr("style") // this is needed for loader function to fire each time
+    $(".form").removeAttr("id") // remove class styles
     newSearch()
   }
 })
 
 document.getElementById("btn-search").addEventListener("click", () => {
   $("#fakeLoader").removeAttr("style")
-  $(".form").removeAttr("id")
+  $(".form").removeAttr("id") // remove class styles
   newSearch()
 })
 
