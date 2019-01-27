@@ -22,7 +22,7 @@ function createWindow() {
     width: 1300,
     height: 800,
     show: false,
-    icon: "images/storrent.png",
+    icon: "images/icons/win/icon.ico",
   })
   
   // and load the index.html of the app.
