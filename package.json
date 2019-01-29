@@ -24,7 +24,7 @@
     "electron-icon-maker": "0.0.4"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.6.3",
+    "@fortawesome/fontawesome-free": "^5.7.0",
     "ajv": "^6.7.0",
     "bootstrap": "^4.2.1",
     "datatables.net": "^1.10.19",
@@ -35,7 +35,7 @@
     "jquery.fakeloader": "^1.0.0",
     "lodash": "^4.17.11",
     "npm": "^6.7.0",
-    "popper.js": "^1.14.6",
+    "popper.js": "^1.14.7",
     "standard": "^12.0.1",
     "torrent-search-api": "^1.1.7",
     "x-ray-crawler": "^2.0.3"
