@@ -27,7 +27,7 @@ const findTorrents = async () => {
   table.className = "table table-sm table-condensed table-bordered table-hover table-striped"
 
   // Create table head
-  let thead = HTMLTableSectionElement = table.createTHead()
+  let thead = table.createTHead()
 
   // Create table head row
   let theadRow = thead.insertRow()
