@@ -17,10 +17,11 @@ torrentSearch.enableProvider("Rarbg") // public (fast response)
 torrentSearch.disableProvider("TorrentProject") // public
 torrentSearch.disableProvider("ExtraTorrent") // public
 
-searchTerm = document.getElementById("search-term")
-
+let searchTerm = document.getElementById("search-term")
+/* jshint ignore:start */
 const findTorrents = async () => {
-  torrents = await torrentSearch.search(searchTerm.value, "", "")
+  let torrents = await torrentSearch.search(searchTerm.value, "", "")
+  /* jshint ignore:end */
 
   // Create table
   const table = document.createElement("table")
