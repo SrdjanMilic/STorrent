@@ -117,9 +117,9 @@ const findTorrents = async () => {
   // finally {
   //   window.alert("Check for errors has finally finished!") // finallyCode - Block of code to be executed regardless of the try / catch result
   // }
-  // document.getElementById("search-results").innerHTML = JSON.stringify(torrents) // for debuging purposes
+  // document.getElementById("search-results").innerHTML = JSON.stringify(torrents) // for debugging purposes
 
-  $("table").DataTable({ // calll data table api
+  $("table").DataTable({ // call data table api
     autoWidth: false,
     lengthChange: true,
     pageLength: 15,
