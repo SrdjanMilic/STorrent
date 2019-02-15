@@ -55,7 +55,7 @@ const findTorrents = async () => {
 
   // Loop for all torrent search results
   for (let i = 0; i < torrents.length; i++) {
-    // document.getElementById("loop-test").innerText = `Loop working ${i} times!!` // For debuging
+    // document.getElementById("loop-test").innerText = `Loop working ${i} times!!` // For debugging
 
     // Create table row
     let newRow = tbody.insertRow()
@@ -69,7 +69,7 @@ const findTorrents = async () => {
     let title = newRow.insertCell()
     title.appendChild(document.createTextNode(JSON.stringify(torrents[i].title).substr(1).slice(0, -1)))
     newRow.appendChild(title)
-
+    
     // Create Time String
     let time = newRow.insertCell()
     time.appendChild(document.createTextNode(JSON.stringify(torrents[i].time).substr(1).slice(0, -1)))
@@ -107,11 +107,11 @@ const findTorrents = async () => {
     provider.appendChild(document.createTextNode(JSON.stringify(torrents[i].provider).substr(1).slice(0, -1)))
     document.getElementById("torrent-results").appendChild(table)
   }
-
+  
   try {
     torrents // Block of code to try
   } catch (err) {
-    window.alert(`Error occurred!\r\n${err}.\r\nPlease, try again.`) // catchCode - Block of code to handle errors
+    alert(`Error occurred!\r\n${err}.\r\nPlease, try again.`) // catchCode - Block of code to handle errors
     return
   }
   // finally {
@@ -132,7 +132,7 @@ let loader = () => {
   $("#fakeLoader").fakeLoader({
     timeToHide: 300,
     spinner: "spinner2",
-    bgColor: "#2ecc71"
+    bgColor: "#006ADB"
   })
 }
 
