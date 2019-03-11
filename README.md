@@ -7,16 +7,16 @@ Torrent search providers are:
 torrentSearch.disableProvider("TorrentLeech") // authentication <br>
 torrentSearch.disableProvider("IpTorrents") // authentication <br>
 torrentSearch.disableProvider("Torrent9") // public <br>
-torrentSearch.disableProvider("Torrentz2") // public <br>
+torrentSearch.enableProvider("Torrentz2") // public <br>
 torrentSearch.disableProvider("1337x") // public (fast response) <br>
 torrentSearch.disableProvider("ThePirateBay") // public <br>
 torrentSearch.disableProvider("Yggtorrent") // authentication <br>
 torrentSearch.disableProvider("KickassTorrents") // public <br>
 torrentSearch.enableProvider("Rarbg") // public (fast response) <br>
 torrentSearch.disableProvider("TorrentProject") // public <br>
-torrentSearch.disableProvider("ExtraTorrent") // public (fast response)
+torrentSearch.enableProvider("ExtraTorrent") // public (fast response)
 
-Only "Rarbg" provider is enabled by default. You can toggle the state of providers by renaming "...disableProvider..." to "...enableProvider..." in js/index.js file. Please note, if there is many providers enabled, waiting for search results could prolongs a bit.
+You can toggle the active state of providers by renaming "...disableProvider..." to "...enableProvider..." in "js/index.js" file. Please note, if there is many providers enabled, waiting for search results could prolongs a bit.
 
 To locally start the application from source, you will need to have [node.js](https://nodejs.org/en/) installed, then just cd to directory and run:
 

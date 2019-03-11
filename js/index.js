@@ -1,21 +1,22 @@
-const $ = require("jquery")
-jQuery = require("jquery")
-fakeLoader = require("jquery.fakeloader")
 require("datatables.net-bs4")()
+
+const $ = require("jquery")
+const jQuery = require("jquery")
+const fakeLoader = require("jquery.fakeloader")
 const TorrentSearchApi = require("torrent-search-api")
 const torrentSearch = new TorrentSearchApi()
 
 torrentSearch.disableProvider("TorrentLeech") // authentication
 torrentSearch.disableProvider("IpTorrents") // authentication
 torrentSearch.disableProvider("Torrent9") // public
-torrentSearch.disableProvider("Torrentz2") // public (slow response)
+torrentSearch.enableProvider("Torrentz2") // public (slow response)
 torrentSearch.disableProvider("1337x") // public (fast response)
 torrentSearch.disableProvider("ThePirateBay") // public
 torrentSearch.disableProvider("Yggtorrent") // authentication
 torrentSearch.disableProvider("KickassTorrents") // public
 torrentSearch.enableProvider("Rarbg") // public (fast response)
 torrentSearch.disableProvider("TorrentProject") // public
-torrentSearch.disableProvider("ExtraTorrent") // public
+torrentSearch.enableProvider("ExtraTorrent") // public
 
 let searchTerm = document.getElementById("search-term")
 /* jshint ignore:start */
@@ -107,7 +108,7 @@ const findTorrents = async () => {
     provider.appendChild(document.createTextNode(JSON.stringify(torrents[i].provider).substr(1).slice(0, -1)))
     document.getElementById("torrent-results").appendChild(table)
   }
-  
+
   try {
     torrents // Block of code to try
   } catch (err) {
