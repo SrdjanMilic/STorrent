@@ -1,5 +1,5 @@
 html {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
 }
 
 body {
@@ -17,6 +17,19 @@ body {
 
 #form-wrapper > div {
 margin-bottom: 0 !important;
+}
+
+#search-term {
+  height: 39px;
+  line-height: 39px;
+}
+
+#btn-search {
+  padding: .375rem 1.1rem;
+}
+
+.fas {
+  line-height: inherit !important;
 }
 
 .dataTables_wrapper {
@@ -44,4 +57,9 @@ td:nth-child(6) {
 
 .row {
   margin: 0 !important;
+}
+
+.col-sm-4,
+.col-sm-12 {
+  padding: 0 !important;
 }
