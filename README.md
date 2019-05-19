@@ -2,7 +2,7 @@
 
 ## Electron multi platform desktop application
 
-### Torrent search providers:
+### Torrent search providers
 
 torrentSearch.disableProvider("TorrentLeech") // authentication  
 torrentSearch.disableProvider("IpTorrents") // authentication  
@@ -28,6 +28,7 @@ To locally start the application from source, you will need to have [node.js](ht
 In section [release](https://github.com/SrdjanMilic/STorrent/releases), there is distributable builds for Linux and Windows. If you want to run app from distributable build, just double click on "storrent" executable in root directory.
 
 ### Credits
+
 STorrent is based on 'torrent-search-api' by [Jimmy Laurent](https://github.com/JimmyLaurent/torrent-search-api).
 
 You can follow up above link for more options and configurations.
