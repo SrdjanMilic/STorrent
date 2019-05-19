@@ -29,6 +29,7 @@
     "datatables.net-bs4": "^1.10.19",
     "electron": "^4.2.2",
     "electron-context-menu": "^0.9.1",
+    "extend": "^3.0.2",
     "fstream": "^1.0.12",
     "https-proxy-agent": "^2.2.1",
     "jquery": "^3.4.1",
