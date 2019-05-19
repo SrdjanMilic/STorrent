@@ -2,7 +2,7 @@
 
 ## Electron multi platform desktop application
 
-Torrent search providers are:
+### Torrent search providers:
 
 torrentSearch.disableProvider("TorrentLeech") // authentication  
 torrentSearch.disableProvider("IpTorrents") // authentication  
@@ -16,7 +16,9 @@ torrentSearch.enableProvider("Rarbg") // public (fast response)
 torrentSearch.disableProvider("TorrentProject") // public  
 torrentSearch.disableProvider("ExtraTorrent") // public (fast response)
 
-You can toggle the active state of providers by renaming "...disableProvider..." to "...enableProvider..." in "js/index.js" file. Please note, if there is many providers enabled, waiting for search results could prolongs a bit. Also, some providers are not working as it should causing the app to fail with response.
+You can toggle the active state of providers by renaming "...disableProvider..." to "...enableProvider..." in "js/index.js" file. Please note, if there is many providers enabled, waiting for search results could prolongs a bit. Also, some providers are not working as it should, causing the app to give no results response.
+
+### Usage
 
 To locally start the application from source, you will need to have [node.js](https://nodejs.org/en/) installed, then just cd to directory and run:
 
@@ -25,6 +27,7 @@ To locally start the application from source, you will need to have [node.js](ht
 
 In section [release](https://github.com/SrdjanMilic/STorrent/releases), there is distributable builds for Linux and Windows. If you want to run app from distributable build, just double click on "storrent" executable in root directory.
 
+### Credits
 STorrent is based on 'torrent-search-api' by [Jimmy Laurent](https://github.com/JimmyLaurent/torrent-search-api).
 
 You can follow up above link for more options and configurations.
