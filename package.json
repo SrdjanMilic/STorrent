@@ -39,6 +39,6 @@
     "standard": "^12.0.1",
     "tar": "^4.4.8",
     "torrent-search-api": "^1.1.7",
-    "x-ray-crawler": "^2.0.3"
+    "x-ray-crawler": "^2.0.4"
   }
 }
