@@ -111,9 +111,6 @@ const findTorrents = async () => {
 
   try {
     torrents;
-    if (torrents[i].title === undefined) {
-      alert('Undefined!');
-    }
   } catch (err) {
     alert(`Error occurred!\r\n${err}.\r\nPlease, try again.`);
     return;
