@@ -23,7 +23,7 @@ let searchTerm = document.getElementById('search-term');
 searchTerm.focus(); // place cursor in the search input filed
 
 const findTorrents = async () => {
-  let torrents = await torrentSearch.search(searchTerm.value,'','');
+  let torrents = await torrentSearch.search(searchTerm.value, '', '');
 
   // Create table
   const table = document.createElement('table');
@@ -123,7 +123,6 @@ const findTorrents = async () => {
     lengthMenu: [15, 50, 100],
     retrieve: true
   });
-
 };
 
 let loader = () => {
