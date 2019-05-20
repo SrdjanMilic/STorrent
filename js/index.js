@@ -71,11 +71,6 @@ const findTorrents = async () => {
     title.appendChild(document.createTextNode(JSON.stringify(torrents[i].title).substr(1).slice(0, -1)));
     newRow.appendChild(title);
 
-    // if (document.createTextNode(JSON.stringify(torrents[i].title).substr(1).slice(0, -1)) === '') {
-    //   alert('There is no torrents with that name!');
-    //   return;
-    // }
-
     // Create Time String
     let time = newRow.insertCell();
     time.appendChild(document.createTextNode(JSON.stringify(torrents[i].time).substr(1).slice(0, -1)));
@@ -116,6 +111,9 @@ const findTorrents = async () => {
 
   try {
     torrents;
+    if (torrents[i].title === undefined) {
+      alert('Undefined!');
+    }
   } catch (err) {
     alert(`Error occurred!\r\n${err}.\r\nPlease, try again.`);
     return;
@@ -166,4 +164,3 @@ document.getElementById('btn-search').addEventListener('click', () => {
     newSearch();
   }
 });
-
