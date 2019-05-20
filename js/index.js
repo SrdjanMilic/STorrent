@@ -13,7 +13,7 @@ torrentSearch.enableProvider('Torrentz2'); // public (slow response)
 torrentSearch.disableProvider('1337x'); // public (fast response)
 torrentSearch.disableProvider('ThePirateBay'); // public
 torrentSearch.disableProvider('Yggtorrent'); // authentication
-torrentSearch.enableProvider('KickassTorrents'); // public
+torrentSearch.disableProvider('KickassTorrents'); // public
 torrentSearch.enableProvider('Rarbg'); // public (fast response)
 torrentSearch.disableProvider('TorrentProject'); // public
 torrentSearch.disableProvider('ExtraTorrent'); // public
