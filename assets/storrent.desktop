@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=STorrent
+Comment=Electron multi-platform esktop app
+GenericName=Search for torrents with multiple providers
+Exec=storrent %U
+Icon=/usr/lib/storrent/resources/app/icons/png/256.png
+Type=Application
+StartupNotify=true
+Categories=Qt;Utility;
+

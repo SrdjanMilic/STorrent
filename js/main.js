@@ -1,12 +1,12 @@
 const { app, BrowserWindow } = require('electron');
-const contextMenu = require('electron-context-menu');
+const path = require('path');
 
-contextMenu({
-  prepend: params => [{
+require('electron-context-menu')({
+  prepend: (params) => [{
     label: 'Rainbow',
     // Only show it when right-clicking images
-    visible: params.mediaType === 'image',
-  }],
+    visible: params.mediaType === 'image'
+  }]
 });
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -21,11 +21,13 @@ function createWindow() {
     },
     width: 1300,
     height: 800,
+    minWidth: 1200,
+    minHeight: 750,
     show: false,
-    icon: 'images/storrent.png',
+    icon: path.join(__dirname, '../icons/png/64.png'),
   });
 
-  win.loadFile('index.html');
+  win.loadFile('html/index.html');
 
   // // Open the DevTools.
   // win.webContents.openDevTools()

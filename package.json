@@ -1,25 +1,30 @@
 {
   "name": "storrent",
-  "productName": "STorrent",
   "version": "0.1.3",
-  "description": "Electron cross platform open source desktop app",
+  "description": "Electron multi-platform esktop app",
   "productDescription": "Search for torrents on multiple sites",
   "license": "GPL-3.0",
-  "main": "main.js",
+  "main": "js/main.js",
   "author": "Srdjan Milic",
   "homepage": "https://sdevelopment.info",
   "repository": "github:SrdjanMilic/STorrent",
-  "icon": "images/storrent.png",
+  "icon": "icons/png/64x64.png",
   "maintainers": [
     "Srdjan Milic"
   ],
   "scripts": {
-    "start": "electron .",
-    "icons": "node_modules/.bin/electron-icon-maker --input=images/storrent.png --output=images",
-    "win64": "electron ./packager.js --overwrite=true"
+    "start": "electron-forge start",
+    "icons": "./node_modules/.bin/electron-icon-maker --input=/home/srdjan/Downloads/storrent1.png --output=./",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
   "devDependencies": {
-    "electron-icon-maker": "0.0.4"
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "electron-forge": "^5.2.4",
+    "electron-icon-maker": "^0.0.4",
+    "electron-prebuilt-compile": "4.0.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.8.2",
@@ -27,8 +32,9 @@
     "bootstrap": "^4.2.1",
     "datatables.net": "^1.10.19",
     "datatables.net-bs4": "^1.10.19",
-    "electron": "^4.2.2",
+    "electron-compile": "^6.4.4",
     "electron-context-menu": "^0.9.1",
+    "electron-squirrel-startup": "^1.0.0",
     "extend": "^3.0.2",
     "fstream": "^1.0.12",
     "https-proxy-agent": "^2.2.1",
@@ -41,5 +47,36 @@
     "tar": "^4.4.8",
     "torrent-search-api": "^1.1.7",
     "x-ray-crawler": "^2.0.4"
+  },
+  "config": {
+    "forge": {
+      "make_targets": {
+        "win32": [
+          "squirrel"
+        ],
+        "darwin": [
+          "zip"
+        ],
+        "linux": [
+          "deb"
+        ]
+      },
+      "electronPackagerConfig": {
+        "packageManager": "npm"
+      },
+      "electronWinstallerConfig": {
+        "name": "storrent"
+      },
+      "electronInstallerDebian": {},
+      "electronInstallerRedhat": {},
+      "github_repository": {
+        "owner": "",
+        "name": ""
+      },
+      "windowsStoreConfig": {
+        "packageName": "",
+        "name": "storrent"
+      }
+    }
   }
 }
