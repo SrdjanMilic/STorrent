@@ -8,7 +8,7 @@
   "author": "Srdjan Milic",
   "homepage": "https://sdevelopment.info",
   "repository": "github:SrdjanMilic/STorrent",
-  "icon": "icons/png/64x64.png",
+  "icon": "icons/win/icon.ico",
   "maintainers": [
     "Srdjan Milic"
   ],
@@ -65,7 +65,7 @@
         "packageManager": "npm"
       },
       "electronWinstallerConfig": {
-        "name": "storrent"
+        "name": "STorrent"
       },
       "electronInstallerDebian": {},
       "electronInstallerRedhat": {},
@@ -75,7 +75,7 @@
       },
       "windowsStoreConfig": {
         "packageName": "",
-        "name": "storrent"
+        "name": "STorrent"
       }
     }
   }
