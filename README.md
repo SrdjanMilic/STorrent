@@ -24,7 +24,7 @@ For Linux users, there is `storrent.desktop` file provided in the assets folder 
 Put that file in `~/.local/share/applications` directory, in order to show up icon and description in the app menu.
 
 Windows users should optionaly pin the app on first run, because installer doesn't create start menu shortcuts.  
-Application files are stored in `c:\Users\$USER\AppData\Local\storrent\` directory.
+Application files are stored in `c:\Users\%USERNAME%\AppData\Local\storrent\` directory.
 
 To locally start the application from source, you will need to have [node.js](https://nodejs.org/en/) installed, then cd to directory and run:
 
