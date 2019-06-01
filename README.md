@@ -1,5 +1,7 @@
 # STorrent - Search for torrents with multiple providers
 
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
+
 **Torrent search providers**
 
 torrentSearch.disableProvider("TorrentLeech") // authentication  
