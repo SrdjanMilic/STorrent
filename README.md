@@ -1,6 +1,6 @@
 # STorrent - Search for torrents with multiple providers
 
-[![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg?style=flat-square)](http://perso.crans.org/besson/LICENSE.html) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=flat-square)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
+[![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg?style=flat-square)](https://opensource.org/licenses/GPL-3.0) [![GitHub release](https://img.shields.io/github/release/SrdjanMilic/STorrent.svg)](https://GitHub.com/SrdjanMilic/STorrent/releases) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=flat-square)](https://GitHub.com/SrdjanMilic/STorrent/graphs/commit-activity)
 
 **Torrent search providers**
 
