@@ -1,65 +1,69 @@
 html {
-  font-size: 0.85rem;
+    font-size: 0.9rem;
 }
 
 body {
-  padding: 0 8px;
+    padding: 0 8px;
 }
 
 #form-wrapper {
-  margin: 0 !important;
-  padding: 0 !important;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+    width: 30%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
-#form-wrapper > div {
-margin-bottom: 0 !important;
+#form-wrapper>div {
+    margin-bottom: 0 !important;
+}
+
+#search {
+    margin-top: 1%;
+    width: 30%;
 }
 
 #search-term {
-  height: 39px;
-  line-height: 39px;
+    height: 45px;
+    line-height: 45px;
 }
 
-#btn-search {
-  padding: .375rem 1.1rem;
+#torrent-results {
+    margin-top: 1%;
 }
 
 .fas {
-  line-height: inherit !important;
+    line-height: inherit !important;
 }
 
 .dataTables_wrapper {
-  margin-bottom: 16px;
+    margin-bottom: 16px;
 }
 
 th {
-  text-align: center !important;
+    text-align: center !important;
 }
 
 td {
-  word-wrap: break-word;
-  vertical-align: middle !important;
-  text-align: center !important;
+    word-wrap: break-word;
+    vertical-align: middle !important;
+    text-align: center !important;
 }
 
 td:nth-child(2) {
-  text-align: initial !important;
+    text-align: initial !important;
 }
 
 td:nth-child(3),
 td:nth-child(6) {
-  white-space: nowrap;
+    white-space: nowrap;
 }
 
 .row {
-  margin: 0 !important;
+    margin: 0 !important;
 }
 
 .col-sm-4,
 .col-sm-12 {
-  padding: 0 !important;
+    padding: 0 !important;
 }

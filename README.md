@@ -4,16 +4,16 @@
 
 **Torrent search providers**
 
-torrentSearch.disableProvider("TorrentLeech") // authentication  
-torrentSearch.disableProvider("IpTorrents") // authentication  
-torrentSearch.disableProvider("Torrent9") // public  
-torrentSearch.enableProvider("Torrentz2") // public  
-torrentSearch.disableProvider("1337x") // public (fast response)  
-torrentSearch.disableProvider("ThePirateBay") // public  
-torrentSearch.disableProvider("Yggtorrent") // authentication  
-torrentSearch.enableProvider("KickassTorrents") // public  
-torrentSearch.enableProvider("Rarbg") // public (fast response)  
-torrentSearch.disableProvider("TorrentProject") // public  
+torrentSearch.disableProvider("TorrentLeech") // authentication
+torrentSearch.disableProvider("IpTorrents") // authentication
+torrentSearch.disableProvider("Torrent9") // public
+torrentSearch.enableProvider("Torrentz2") // public
+torrentSearch.disableProvider("1337x") // public (fast response)
+torrentSearch.disableProvider("ThePirateBay") // public
+torrentSearch.disableProvider("Yggtorrent") // authentication
+torrentSearch.enableProvider("KickassTorrents") // public
+torrentSearch.enableProvider("Rarbg") // public (fast response)
+torrentSearch.disableProvider("TorrentProject") // public
 torrentSearch.disableProvider("ExtraTorrent") // public (fast response)
 
 You can toggle the active state of providers by renaming "...disableProvider..." to "...enableProvider..." in "js/index.js" file. Please note, if there is many providers enabled, waiting for search results could prolongs a bit.
@@ -22,15 +22,15 @@ You can toggle the active state of providers by renaming "...disableProvider..."
 
 In section [releases](https://github.com/SrdjanMilic/STorrent/releases), there is a `.deb` installer for GNU/Linux Ubuntu based distros and `.exe` executable for Windows.
 
-For Linux users, there is `storrent.desktop` file provided in the assets folder for better convenience.  
+For Linux users, there is `storrent.desktop` file provided in the assets folder for better convenience.
 Put that file in `~/.local/share/applications` directory, in order to show up icon and description in the app menu.
 
-Windows users should optionaly pin the app on first run, because installer doesn't create start menu shortcuts.  
+Windows users should optionaly pin the app on first run, because installer doesn't create start menu shortcuts.
 Application files are stored in `c:\Users\%USERNAME%\AppData\Local\storrent\` directory.
 
 To locally start the application from source, you will need to have [node.js](https://nodejs.org/en/) installed, then cd to directory and run:
 
-1. npm install
+1. npm i
 2. npm start
 
 **Credits**

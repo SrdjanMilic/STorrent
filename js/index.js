@@ -18,31 +18,36 @@ torrentSearch.enableProvider('Rarbg'); // public (fast response)
 torrentSearch.disableProvider('TorrentProject'); // public
 torrentSearch.disableProvider('ExtraTorrent'); // public
 
-let searchTerm = document.getElementById('search-term');
+const searchTerm = document.getElementById('search-term');
 
 searchTerm.focus(); // place cursor in the search input filed
 
 const findTorrents = async () => {
-  let torrents = await torrentSearch.search(searchTerm.value, '', '');
+  const torrents = await torrentSearch.search(searchTerm.value, '', '');
+
+  if (torrents.length == 1) {
+    alert('There is no such torrent!');
+    return;
+  }
 
   // Create table
   const table = document.createElement('table');
   table.className = 'table table-sm table-condensed table-bordered table-hover table-striped';
 
   // Create table head
-  let thead = table.createTHead();
+  const thead = table.createTHead();
 
   // Create table head row
-  let theadRow = thead.insertRow();
+  const theadRow = thead.insertRow();
 
   // Create eight table head row cells
   for (let i = 0; i < 8; i++) {
-    let th = document.createElement('th');
+    const th = document.createElement('th');
     theadRow.appendChild(th);
   }
 
   // Create eight table head row cells names
-  let tableHeadCellName = table.getElementsByTagName('th');
+  const tableHeadCellName = table.getElementsByTagName('th');
 
   tableHeadCellName[0].innerText = 'ID';
   tableHeadCellName[1].innerText = 'Title';
@@ -57,37 +62,36 @@ const findTorrents = async () => {
 
   // Loop for all torrent search results
   for (let i = 0; i < torrents.length; i++) {
-
     // Create table row
-    let newRow = tbody.insertRow();
+    const newRow = tbody.insertRow();
 
     // Create ID numbers
-    let id = newRow.insertCell();
+    const id = newRow.insertCell();
     id.appendChild(document.createTextNode(i + 1));
     newRow.appendChild(id);
 
     // Create Title String
-    let title = newRow.insertCell();
+    const title = newRow.insertCell();
     title.appendChild(document.createTextNode(JSON.stringify(torrents[i].title).substr(1).slice(0, -1)));
     newRow.appendChild(title);
 
     // Create Time String
-    let time = newRow.insertCell();
+    const time = newRow.insertCell();
     time.appendChild(document.createTextNode(JSON.stringify(torrents[i].time).substr(1).slice(0, -1)));
     newRow.appendChild(time);
 
     // Create Seeds String
-    let seeds = newRow.insertCell();
+    const seeds = newRow.insertCell();
     seeds.appendChild(document.createTextNode(JSON.stringify(torrents[i].seeds)));
     newRow.appendChild(seeds);
 
     // Create Peers String
-    let peers = newRow.insertCell();
+    const peers = newRow.insertCell();
     peers.appendChild(document.createTextNode(JSON.stringify(torrents[i].peers)));
     newRow.appendChild(peers);
 
     // Create Size String
-    let size = newRow.insertCell();
+    const size = newRow.insertCell();
     size.appendChild(document.createTextNode(JSON.stringify(torrents[i].size).substr(1).slice(0, -1)));
     newRow.appendChild(size);
 
@@ -103,7 +107,7 @@ const findTorrents = async () => {
     url.appendChild(createLink);
 
     // Provider String
-    let provider = newRow.insertCell();
+    const provider = newRow.insertCell();
     newRow.appendChild(provider);
     provider.appendChild(document.createTextNode(JSON.stringify(torrents[i].provider).substr(1).slice(0, -1)));
     document.getElementById('torrent-results').appendChild(table);
@@ -125,7 +129,7 @@ const findTorrents = async () => {
   });
 };
 
-let loader = () => {
+const loader = () => {
   $('#fakeLoader').fakeLoader({
     timeToHide: 300,
     spinner: 'spinner2',
@@ -133,7 +137,7 @@ let loader = () => {
   });
 };
 
-let newSearch = () => {
+const newSearch = () => {
   loader();
   $('.dataTables_wrapper').remove(); // remove previous results table
   findTorrents();

@@ -1,5 +1,5 @@
+.idea
 .vscode
-_archive
 node_modules
+out
 notes.txt
-out/

@@ -1,36 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <title>STorrent - Search for torrents with multiple providers</title>
-  <link rel="stylesheet" href="../css/styles.css">
-  <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
-  <link rel="stylesheet" href="../node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../node_modules/jquery.fakeloader/dist/jquery.fakeloader.min.css">
+    <title>STorrent - Search for torrents with multiple providers</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="../node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/jquery.fakeloader/dist/jquery.fakeloader.min.css">
 </head>
 
 <body id="body">
 
-  <div id="fakeLoader"></div>
+    <div id="fakeLoader"></div>
 
-  <div id="search">
-    <div id="form-wrapper" class="form col-sm-4 my-3">
-      <div class="input-group mb-3">
-        <input type="text" id="search-term" class="form-control">
-        <div class="input-group-append">
-          <button id="btn-search" class="btn btn-primary" type="button">
-            <i class="fas fa-search"></i>
-          </button>
+    <div id="search">
+        <div id="form-wrapper" class="form">
+            <div class="input-group">
+                <input type="text" id="search-term" class="form-control">
+                <div class="input-group-append">
+                    <button id="btn-search" class="btn btn-primary" type="button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 
-  <!-- Container for dinamic table search results. -->
-  <div id="torrent-results"></div>
+    <!-- Container for dinamic table search results. -->
+    <div id="torrent-results"></div>
 
-  <script src="../js/index.js"></script>
+    <script src="../js/index.js"></script>
 
 </body>
 

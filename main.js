@@ -13,7 +13,7 @@ require('electron-context-menu')({
 // be closed automatically when the JavaScript object is garbage collected.
 let win;
 
-function createWindow() {
+function createWindow () {
   // Create the browser window.
   win = new BrowserWindow({
     webPreferences: {
@@ -24,12 +24,12 @@ function createWindow() {
     minWidth: 1200,
     minHeight: 750,
     show: false,
-    icon: path.join(__dirname, '../icons/png/64.png'),
+    icon: path.join(__dirname, '../icons/png/64.png')
   });
 
   win.loadFile('html/index.html');
 
-  // // Open the DevTools.
+  // Open the DevTools.
   // win.webContents.openDevTools()
 
   // Emitted when the window is closed.
