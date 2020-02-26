@@ -1,8 +1,8 @@
 # STorrent - Search for torrents with multiple providers
 
-[![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg?style=flat-square)](https://opensource.org/licenses/GPL-3.0) [![GitHub release](https://img.shields.io/github/release/SrdjanMilic/STorrent.svg)](https://GitHub.com/SrdjanMilic/STorrent/releases) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=flat-square)](https://GitHub.com/SrdjanMilic/STorrent/graphs/commit-activity)
-
-**Torrent search providers**
+[![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg?style=flat-square)](https://opensource.org/licenses/GPL-3.0) [![GitHub release](https://img.shields.io/github/release/SrdjanMilic/STorrent.svg?style=flat-square)](https://GitHub.com/SrdjanMilic/STorrent/releases) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=flat-square)](https://GitHub.com/SrdjanMilic/STorrent/graphs/commit-activity) [![Support](https://img.shields.io/badge/support-project-blueviolet.svg?style=flat-square)](https://paypal.me/SrdjanMilic?locale.x=en_US)
+ 
+Providers are:
 
 torrentSearch.disableProvider("TorrentLeech") // authentication
 torrentSearch.disableProvider("IpTorrents") // authentication
