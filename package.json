@@ -33,7 +33,6 @@
     "eslint-plugin-standard": "^4.0.1"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.8.2",
     "ajv": "^6.7.0",
     "bootstrap": "^4.2.1",
     "datatables.net": "^1.10.19",

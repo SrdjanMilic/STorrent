@@ -24,7 +24,7 @@ function createWindow () {
     minWidth: 1200,
     minHeight: 750,
     show: false,
-    icon: path.join(__dirname, '../icons/png/64.png')
+    icon: path.join(__dirname, 'icons/png/64.png')
   });
 
   win.loadFile('html/index.html');

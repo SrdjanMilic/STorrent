@@ -28,6 +28,15 @@ body {
     line-height: 45px;
 }
 
+#btn-search {
+    padding: 0 14px;
+}
+
+/* Search button icon */
+img {
+    width: 20px;
+}
+
 #torrent-results {
     margin-top: 1%;
 }
