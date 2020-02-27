@@ -3,10 +3,11 @@
     src: url("../fonts/Roboto-Regular.ttf");
 }
 
-body {
-    padding: 0 8px;
+#body {
     font-family: "Roboto";
-    font-size: 0.85rem;
+    font-size: 1rem;
+    margin-top: 15px;
+    color: rgb(59, 59, 59);
 }
 
 #form-wrapper {
@@ -22,8 +23,8 @@ body {
 }
 
 #search {
-    margin-top: 1%;
-    width: 30%;
+    margin: 0 15px;
+    width: 32%;
 }
 
 #search-term {
@@ -49,7 +50,7 @@ img {
 }
 
 .dataTables_wrapper {
-    margin-bottom: 16px;
+    margin-bottom: 15px;
 }
 
 th {
@@ -82,9 +83,4 @@ td:nth-child(6) {
 
 .row {
     margin: 0 !important;
-}
-
-.col-sm-4,
-.col-sm-12 {
-    padding: 0 !important;
 }
