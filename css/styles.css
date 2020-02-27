@@ -1,9 +1,12 @@
-html {
-    font-size: 0.9rem;
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/Roboto-Regular.ttf");
 }
 
 body {
     padding: 0 8px;
+    font-family: "Roboto";
+    font-size: 0.85rem;
 }
 
 #form-wrapper {
