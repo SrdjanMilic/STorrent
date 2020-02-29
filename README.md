@@ -16,14 +16,17 @@ torrentSearch.enableProvider("Torrentz2") // public
 torrentSearch.disableProvider("1337x") // public (fast response)  
 torrentSearch.disableProvider("ThePirateBay") // public  
 torrentSearch.disableProvider("Yggtorrent") // authentication  
-torrentSearch.enableProvider("KickassTorrents") // public  
+torrentSearch.disableProvider("KickassTorrents") // public  
 torrentSearch.enableProvider("Rarbg") // public (fast response)  
 torrentSearch.disableProvider("TorrentProject") // public  
 torrentSearch.disableProvider("ExtraTorrent") // public (fast response)
 
-You can toggle the active state of providers by renaming "...disableProvider..." to "...enableProvider..." in "js/index.js" file.
+You can toggle the active state of providers by renaming:
+- "...disableProvider..." to "...enableProvider..."
+in `js/index.js` file.
 
-Please note, if there is many providers enabled, waiting for search results could prolongs a bit.
+Please note, if there is many providers enabled, waiting for search results could prolongs a bit.  
+I've found those two already enabled best working combination.
 
 **Usage**
 
