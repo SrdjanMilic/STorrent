@@ -5,6 +5,7 @@ const jQuery = require('jquery');
 const fakeLoader = require('jquery.fakeloader');
 const TorrentSearchApi = require('torrent-search-api');
 const torrentSearch = new TorrentSearchApi();
+const modal = require('bootstrap');
 
 torrentSearch.disableProvider('TorrentLeech'); // authentication
 torrentSearch.disableProvider('IpTorrents'); // authentication
@@ -25,8 +26,12 @@ searchTerm.focus(); // place cursor in the search input filed
 const findTorrents = async () => {
   const torrents = await torrentSearch.search(searchTerm.value, '', '');
 
-  if (torrents.length == 1) {
-    alert('There is no such torrent!');
+  if (torrents.length === 1) {
+    $('#myModal').modal('show');
+    $('.modal-body').text('There is no torrent with that name!');
+    $('#myModal').on('hidden.bs.modal', function (e) {
+      searchTerm.focus();
+    });
     return;
   }
 
@@ -127,13 +132,15 @@ const findTorrents = async () => {
     lengthMenu: [15, 50, 100],
     retrieve: true
   });
+
+  searchTerm.blur();
 };
 
 const loader = () => {
   $('#fakeLoader').fakeLoader({
-    timeToHide: 300,
+    timeToHide: 500,
     spinner: 'spinner2',
-    bgColor: '#006ADB'
+    bgColor: '#1a1a1a'
   });
 };
 
@@ -143,24 +150,40 @@ const newSearch = () => {
   findTorrents();
 };
 
+const resetSearh = () => {
+  $('#fakeLoader').removeAttr('style'); // this is needed for loader function to fire each time
+  $('.form').removeAttr('id'); // remove class styles
+  newSearch();
+};
+
+// Error handling
+const noTermError = () => {
+  $('#myModal').modal('show');
+  $('.modal-body').text('Please, input search term!');
+  $('#myModal').on('hidden.bs.modal', function (e) {
+    searchTerm.focus();
+  });
+};
+
 // Event Listeners
 searchTerm.addEventListener('keypress', () => {
   if (event.keyCode === 13 && searchTerm.value === '') {
-    alert('Please, input search term.');
+    $('#myModal').modal('show');
+    noTermError();
   } else if (event.keyCode === 13 && searchTerm.value !== '') {
-    $('#fakeLoader').removeAttr('style'); // this is needed for loader function to fire each time
-    $('.form').removeAttr('id'); // remove class styles
-    newSearch();
+    resetSearh();
   }
 });
 
 document.getElementById('btn-search').addEventListener('click', () => {
   if (searchTerm.value === '') {
-    alert('Please, input search term.');
-    searchTerm.focus();
+    noTermError();
   } else if (searchTerm.value !== '') {
-    $('#fakeLoader').removeAttr('style');
-    $('.form').removeAttr('id'); // remove class styles
-    newSearch();
+    resetSearh();
   }
+});
+
+document.getElementById('clear').addEventListener('click', () => {
+  searchTerm.value = '';
+  searchTerm.focus();
 });
