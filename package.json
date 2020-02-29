@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "start": "electron-forge start",
-    "icons": "./node_modules/.bin/electron-icon-maker --input=/home/srdjan/Downloads/storrent1.png --output=./",
+    "icons": "./node_modules/.bin/electron-icon-maker --input=/home/srdjanm/MyProjects/Electron/STorrent/assets/icon.png --output=./",
     "package": "electron-forge package",
     "make": "electron-forge make"
   },
@@ -23,7 +23,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "electron-forge": "^5.2.4",
-    "electron-icon-maker": "^0.0.4",
+    "electron-icon-maker": "0.0.4",
     "electron-prebuilt-compile": "4.0.0",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.0",
