@@ -30,7 +30,7 @@ I've found those two already enabled best working combination.
 
 **Usage**
 
-In section [releases](https://github.com/SrdjanMilic/STorrent/releases),  
+In [releases](https://github.com/SrdjanMilic/STorrent/releases) section,  
 there is a `.deb` installer for GNU/Linux Ubuntu based distros and `.exe` executable for Windows.
 
 For Linux users, there is `storrent.desktop` file provided in the assets folder for better convenience.  
