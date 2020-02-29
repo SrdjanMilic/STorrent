@@ -11,15 +11,36 @@
 
 <body id="body">
 
+    <div id="myModal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Info</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Modal body text goes here. -->
+                    <p></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="fakeLoader"></div>
 
     <div id="search">
         <div id="form-wrapper" class="form">
             <div class="input-group">
                 <input type="text" id="search-term" class="form-control">
+                <img id="clear" src="../images/clear.svg" alt="">
                 <div class="input-group-append">
                     <button id="btn-search" class="btn btn-primary" type="button">
-                        <img src="../images/magnifying-glass.svg" alt="">
+                        <img class="magnifying-glass" src="../images/magnifying-glass.svg" alt="">
                     </button>
                 </div>
             </div>
