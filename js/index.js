@@ -28,7 +28,7 @@ const findTorrents = async () => {
 
   if (torrents.length === 1) {
     $('#myModal').modal('show');
-    $('.modal-body').text('There is no torrent with that name!');
+    $('.modal-body').text('There are no torrents with that name!');
     $('#myModal').on('hidden.bs.modal', function (e) {
       searchTerm.focus();
     });
