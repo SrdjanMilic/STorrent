@@ -23,15 +23,19 @@ const searchTerm = document.getElementById('search-term');
 
 searchTerm.focus(); // place cursor in the search input filed
 
+const callModal = () => {
+  $('#myModal').modal('show');
+  $('#myModal').on('hidden.bs.modal', function (e) {
+    searchTerm.focus();
+  });
+};
+
 const findTorrents = async () => {
   const torrents = await torrentSearch.search(searchTerm.value, '', '');
 
   if (torrents.length === 1) {
-    $('#myModal').modal('show');
+    callModal();
     $('.modal-body').text('There are no torrents with that name!');
-    $('#myModal').on('hidden.bs.modal', function (e) {
-      searchTerm.focus();
-    });
     return;
   }
 
@@ -156,20 +160,11 @@ const resetSearh = () => {
   newSearch();
 };
 
-// Error handling
-const noTermError = () => {
-  $('#myModal').modal('show');
-  $('.modal-body').text('Please, input search term!');
-  $('#myModal').on('hidden.bs.modal', function (e) {
-    searchTerm.focus();
-  });
-};
-
 // Event Listeners
 searchTerm.addEventListener('keypress', () => {
   if (event.keyCode === 13 && searchTerm.value === '') {
-    $('#myModal').modal('show');
-    noTermError();
+    callModal();
+    $('.modal-body').text('Please, input search term!');
   } else if (event.keyCode === 13 && searchTerm.value !== '') {
     resetSearh();
   }
@@ -177,7 +172,8 @@ searchTerm.addEventListener('keypress', () => {
 
 document.getElementById('btn-search').addEventListener('click', () => {
   if (searchTerm.value === '') {
-    noTermError();
+    callModal();
+    $('.modal-body').text('Please, input search term!');
   } else if (searchTerm.value !== '') {
     resetSearh();
   }
