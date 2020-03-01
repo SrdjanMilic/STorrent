@@ -45,6 +45,12 @@ then cd to directory and run:
 1. npm i
 2. npm start
 
+**Scripts**
+1. start - start the app
+2. package - create distributables
+3. make - create packages
+4. icons - create icon sets
+
 **Credits**
 
 STorrent is based on 'torrent-search-api' by [Jimmy Laurent](https://github.com/JimmyLaurent/torrent-search-api).
