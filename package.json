@@ -1,10 +1,10 @@
 {
   "name": "storrent",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Electron multi-platform esktop app",
   "productDescription": "Search for torrents on multiple sites",
   "license": "GPL-3.0",
-  "main": "main.js",
+  "main": "js/main.js",
   "author": "Srdjan Milic",
   "homepage": "https://sdevelopment.info",
   "repository": "github:SrdjanMilic/STorrent",
@@ -14,9 +14,9 @@
   ],
   "scripts": {
     "start": "electron-forge start",
-    "icons": "./node_modules/.bin/electron-icon-maker --input=/home/srdjanm/MyProjects/Electron/STorrent/assets/icon.png --output=./",
     "package": "electron-forge package",
-    "make": "electron-forge make"
+    "make": "electron-forge make",
+    "icons": "./node_modules/.bin/electron-icon-maker --input=/home/srdjanm/MyProjects/Electron/STorrent/assets/icon.png --output=./"
   },
   "devDependencies": {
     "babel-plugin-transform-async-to-generator": "^6.24.1",
