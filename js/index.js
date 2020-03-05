@@ -3,14 +3,13 @@ require('datatables.net-bs4')();
 const $ = require('jquery');
 const jQuery = require('jquery');
 const fakeLoader = require('jquery.fakeloader');
-const TorrentSearchApi = require('torrent-search-api');
-const torrentSearch = new TorrentSearchApi();
+const torrentSearch = require('torrent-search-api');
 const modal = require('bootstrap');
 
 // TODO: error handling for sites that require autorization and ones there is no response
 torrentSearch.disableProvider('TorrentLeech'); // authentication
 torrentSearch.disableProvider('IpTorrents'); // authentication
-torrentSearch.enableProvider('Torrent9'); // public
+torrentSearch.disableProvider('Torrent9'); // public
 torrentSearch.disableProvider('Torrentz2'); // public (slow response)
 torrentSearch.disableProvider('1337x'); // public (fast response)
 torrentSearch.disableProvider('ThePirateBay'); // public
@@ -19,6 +18,11 @@ torrentSearch.disableProvider('KickassTorrents'); // public
 torrentSearch.enableProvider('Rarbg'); // public (fast response)
 torrentSearch.disableProvider('TorrentProject'); // public
 torrentSearch.disableProvider('ExtraTorrent'); // public
+
+/*
+const checkIfProviderIsActive = torrentSearch.isProviderActive('Rarbg');
+console.log(checkIfProviderIsActive);
+*/
 
 const searchTerm = document.getElementById('search-term');
 
