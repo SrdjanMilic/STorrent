@@ -11,7 +11,7 @@ Torrent search providers are:
 torrentSearch.disableProvider("TorrentLeech") // authentication  
 torrentSearch.disableProvider("IpTorrents") // authentication  
 torrentSearch.disableProvider("Torrent9") // public  
-torrentSearch.enableProvider("Torrentz2") // public  
+torrentSearch.disableProvider("Torrentz2") // public  
 torrentSearch.disableProvider("1337x") // public (fast response)  
 torrentSearch.disableProvider("ThePirateBay") // public  
 torrentSearch.disableProvider("Yggtorrent") // authentication  
