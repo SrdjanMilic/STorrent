@@ -14,7 +14,7 @@ torrentSearch.disableProvider("IpTorrents") // authentication
 torrentSearch.disableProvider("Torrent9") // public  
 torrentSearch.disableProvider("Torrentz2") // public  
 torrentSearch.disableProvider("1337x") // public (fast response)  
-torrentSearch.disableProvider("ThePirateBay") // public  
+torrentSearch.enableProvider("ThePirateBay") // public  
 torrentSearch.disableProvider("Yggtorrent") // authentication  
 torrentSearch.disableProvider("KickassTorrents") // public  
 torrentSearch.enableProvider("Rarbg") // public (fast response)  
