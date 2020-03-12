@@ -3,6 +3,7 @@
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-yellow.svg?style=flat-square)](https://opensource.org/licenses/GPL-3.0)
 [![GitHub release](https://img.shields.io/github/release/SrdjanMilic/STorrent.svg?style=flat-square)](https://GitHub.com/SrdjanMilic/STorrent/releases)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-brightgreen.svg?style=flat-square)](https://GitHub.com/SrdjanMilic/STorrent/graphs/commit-activity)
+[![Support](https://img.shields.io/badge/support%20by-PayPal-lightgray.svg?style=flat-square)](https://paypal.me/SrdjanMilic?locale.x=en_US)
 
 ## Electron multi-platform desktop application
 
@@ -18,7 +19,9 @@ torrentSearch.disableProvider("Yggtorrent") // authentication
 torrentSearch.disableProvider("KickassTorrents") // public  
 torrentSearch.enableProvider("Rarbg") // public (fast response)  
 torrentSearch.disableProvider("TorrentProject") // public  
-torrentSearch.disableProvider("ExtraTorrent") // public (fast response)
+torrentSearch.disableProvider('Yts'); // public  
+torrentSearch.disableProvider('Limetorrents'); // public  
+torrentSearch.disableProvider('Eztv'); // public
 
 You can toggle the active state of providers by renaming:
 - "...disableProvider..." to "...enableProvider..."
