@@ -1,8 +1,8 @@
 {
   "name": "storrent",
   "version": "0.1.5",
-  "description": "Electron multi-platform esktop app",
-  "productDescription": "Search for torrents on multiple sites",
+  "description": "Search for torrents on multiple sites",
+  "productDescription": "Electron multi-platform desktop app",
   "license": "GPL-3.0",
   "main": "js/main.js",
   "author": "Srdjan Milic",
@@ -75,8 +75,8 @@
       "electronInstallerDebian": {},
       "electronInstallerRedhat": {},
       "github_repository": {
-        "owner": "",
-        "name": ""
+        "owner": "SrdjanMilic",
+        "name": "STorrent"
       },
       "windowsStoreConfig": {
         "packageName": "",
