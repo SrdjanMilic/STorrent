@@ -86,6 +86,7 @@ table.dataTable.table-sm .sorting_desc:after {
 
 td {
     word-wrap: break-word;
+    padding: 0.6rem !important;
     vertical-align: middle !important;
     text-align: center !important;
 }
@@ -105,4 +106,9 @@ td:nth-child(6) {
 
 #torrent-results .dataTables_wrapper>div.row:nth-child(3) {
     margin-top: 7px !important;
+}
+
+.download-button {
+    height: 14px;
+    width: 14px;
 }
