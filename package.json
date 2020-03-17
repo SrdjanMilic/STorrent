@@ -2,13 +2,11 @@
   "name": "storrent",
   "version": "0.1.5",
   "description": "Search for torrents on multiple sites",
-  "productDescription": "Electron multi-platform desktop app",
+  "productDescription": "Electron multi-platform desktop app, with table view and sortable columns...",
   "license": "GPL-3.0",
   "main": "js/main.js",
   "author": "Srdjan Milic",
-  "homepage": "https://sdevelopment.info",
   "repository": "github:SrdjanMilic/STorrent",
-  "icon": "icons/win/icon.ico",
   "maintainers": [
     "Srdjan Milic"
   ],
@@ -70,7 +68,6 @@
       },
       "electronPackagerConfig": {
         "packageManager": "npm",
-        "icon": "icons/png/128x128.png",
         "ignore": [
           ".vscode",
           "assets",
@@ -87,7 +84,7 @@
         "name": "https://github.com/SrdjanMilic/STorrent"
       },
       "windowsStoreConfig": {
-        "packageName": "",
+        "packageName": "STorrent",
         "name": "STorrent"
       }
     }
