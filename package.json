@@ -82,8 +82,6 @@
       "electronWinstallerConfig": {
         "name": "STorrent"
       },
-      "electronInstallerDebian": {},
-      "electronInstallerRedhat": {},
       "github_repository": {
         "owner": "SrdjanMilic",
         "name": "https://github.com/SrdjanMilic/STorrent"
