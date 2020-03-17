@@ -48,6 +48,7 @@
     "lodash": "^4.17.15",
     "npm": "^6.14.2",
     "popper.js": "^1.16.1",
+    "request": "^2.88.2",
     "standard": "^12.0.1",
     "tar": "^4.4.13",
     "torrent-search-api": "^2.1.0",
@@ -55,6 +56,7 @@
   },
   "config": {
     "forge": {
+      "packagerConfig": {},
       "make_targets": {
         "win32": [
           "squirrel"
@@ -67,7 +69,15 @@
         ]
       },
       "electronPackagerConfig": {
-        "packageManager": "npm"
+        "packageManager": "npm",
+        "icon": "icons/png/128x128.png",
+        "ignore": [
+          ".vscode",
+          "assets",
+          "out",
+          "screenshots",
+          "notes"
+        ]
       },
       "electronWinstallerConfig": {
         "name": "STorrent"
@@ -76,7 +86,7 @@
       "electronInstallerRedhat": {},
       "github_repository": {
         "owner": "SrdjanMilic",
-        "name": "STorrent"
+        "name": "https://github.com/SrdjanMilic/STorrent"
       },
       "windowsStoreConfig": {
         "packageName": "",
