@@ -48,7 +48,7 @@ const findTorrents = async () => {
 
   // Create table
   const table = document.createElement('table');
-  table.className = 'table table-sm table-condensed table-bordered table-hover table-striped';
+  table.className = 'table table-condensed table-bordered table-hover table-striped';
 
   // Create table head
   const thead = table.createTHead();
@@ -71,7 +71,7 @@ const findTorrents = async () => {
   tableHeadCellName[3].innerText = 'Seeds';
   tableHeadCellName[4].innerText = 'Peers';
   tableHeadCellName[5].innerText = 'Size';
-  tableHeadCellName[6].innerText = 'Url';
+  tableHeadCellName[6].innerText = 'DL';
   tableHeadCellName[7].innerText = 'Provider';
 
   const tbody = table.appendChild(document.createElement('tbody'));
@@ -117,8 +117,12 @@ const findTorrents = async () => {
 
     const createLink = document.createElement('a');
     createLink.href = JSON.stringify(torrents[i].magnet).substr(1).slice(0, -1);
-    createLink.setAttribute('class', 'btn btn-secondary btn-sm');
-    createLink.innerText = 'Download';
+
+    // create download button
+    const img = document.createElement('img');
+    img.src = '../images/download.svg';
+    img.setAttribute('class', 'download-button');
+    createLink.appendChild(img);
 
     url.appendChild(createLink);
 
