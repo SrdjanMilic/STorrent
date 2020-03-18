@@ -49,8 +49,8 @@
     "popper.js": "^1.16.1",
     "request": "^2.88.2",
     "standard": "^12.0.1",
-    "tar": "^4.4.13",
-    "torrent-search-api": "^2.1.0",
+    "tar": "^6.0.1",
+    "torrent-search-api": "^2.1.1",
     "x-ray-crawler": "^2.0.4"
   },
   "config": {
