@@ -68,6 +68,7 @@
         ]
       },
       "electronPackagerConfig": {
+        "icon": "icons/win/icon.ico",
         "packageManager": "npm",
         "ignore": [
           ".vscode",
