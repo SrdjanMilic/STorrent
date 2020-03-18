@@ -10,6 +10,10 @@
     color: #1a1a1a;
 }
 
+input {
+    font-family: "Roboto" !important;
+}
+
 .table {
     color: #1a1a1a !important;
 }
@@ -33,7 +37,6 @@
 
 #search-term {
     height: 32px;
-    font-size: 17px;
     font-weight: bold;
     padding: .375rem 1.75rem .375rem .75rem;
 }
