@@ -32,7 +32,7 @@
 }
 
 #search-term {
-    height: 40px;
+    height: 32px;
     font-size: 17px;
     font-weight: bold;
     padding: .375rem 1.75rem .375rem .75rem;
@@ -46,7 +46,7 @@
 #clear {
     position: absolute;
     right: 55px;
-    top: 14px;
+    top: 10px;
     width: 12px;
     height: 12px;
     z-index: 100;
@@ -55,8 +55,8 @@
 
 /* Search button icon */
 .magnifying-glass {
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
 }
 
 #torrent-results {
@@ -86,7 +86,6 @@ table.dataTable.table-sm .sorting_desc:after {
 
 td {
     word-wrap: break-word;
-    padding: 0.6rem !important;
     vertical-align: middle !important;
     text-align: center !important;
 }
