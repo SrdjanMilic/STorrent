@@ -10,11 +10,9 @@
     color: #1a1a1a;
 }
 
-input {
-    font-family: "Roboto" !important;
-}
-
+input,
 .table {
+    font-family: "Roboto" !important;
     color: #1a1a1a !important;
 }
 
