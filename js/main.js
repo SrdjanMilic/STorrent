@@ -19,10 +19,10 @@ function createWindow () {
     webPreferences: {
       nodeIntegration: true
     },
-    width: 1450,
-    height: 900,
-    minWidth: 1250,
-    minHeight: 770,
+    width: 1300,
+    height: 780,
+    minWidth: 1150,
+    minHeight: 730,
     show: false,
     icon: path.join(__dirname, '../icons/png/128x128.png')
   });
