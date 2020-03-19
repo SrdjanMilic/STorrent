@@ -1,6 +1,6 @@
 {
   "name": "storrent",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Search for torrents on multiple sites",
   "productDescription": "Electron multi-platform desktop app, with table view and sortable columns...",
   "license": "GPL-3.0",
