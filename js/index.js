@@ -147,8 +147,6 @@ const findTorrents = async () => {
     lengthMenu: [15, 50, 100],
     retrieve: true
   });
-
-  searchTerm.blur();
 };
 
 const loader = () => {
