@@ -40,7 +40,7 @@ const callModal = () => {
 const findTorrents = async () => {
   const torrents = await torrentSearch.search(searchTerm.value, '', '');
 
-  if (torrents.length === 1) {
+  if (torrents.length === 0) {
     callModal();
     $('.modal-body').text('There are no torrents with that name!');
     return;
@@ -48,7 +48,7 @@ const findTorrents = async () => {
 
   // Create table
   const table = document.createElement('table');
-  table.className = 'table table-sm table-bordered table-hover table-striped';
+  table.className = 'table table-sm table-condensed table-bordered table-hover table-striped';
 
   // Create table head
   const thead = table.createTHead();
