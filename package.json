@@ -17,6 +17,7 @@
     "icons": "./node_modules/.bin/electron-icon-maker --input=/home/srdjanm/MyProjects/Electron/STorrent/assets/icon.png --output=./"
   },
   "devDependencies": {
+    "ajv": "^6.12.0",
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
@@ -24,38 +25,39 @@
     "electron-forge": "^5.2.4",
     "electron-icon-maker": "0.0.4",
     "electron-prebuilt-compile": "4.0.0",
+    "electron-squirrel-startup": "^1.0.0",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1"
+    "eslint-plugin-standard": "^4.0.1",
+    "extend": "^3.0.2",
+    "fstream": "^1.0.12",
+    "lodash": "^4.17.15",
+    "npm": "^6.14.2",
+    "standard": "^12.0.1",
+    "tar": "^6.0.1"
   },
   "dependencies": {
-    "ajv": "^6.12.0",
     "bootstrap": "^4.4.1",
     "datatables.net": "^1.10.20",
     "datatables.net-bs4": "^1.10.20",
     "electron-compile": "^6.4.4",
     "electron-context-menu": "^0.9.1",
-    "electron-squirrel-startup": "^1.0.0",
-    "extend": "^3.0.2",
-    "fstream": "^1.0.12",
     "https-proxy-agent": "^2.2.4",
     "jquery": "^3.4.1",
     "jquery.fakeloader": "^1.0.0",
-    "lodash": "^4.17.15",
-    "npm": "^6.14.2",
     "popper.js": "^1.16.1",
     "request": "^2.88.2",
-    "standard": "^12.0.1",
-    "tar": "^6.0.1",
     "torrent-search-api": "^2.1.1",
     "x-ray-crawler": "^2.0.4"
   },
   "config": {
     "forge": {
-      "packagerConfig": {},
+      "packagerConfig": {
+        "packageName": "STorrent"
+      },
       "make_targets": {
         "win32": [
           "squirrel"
@@ -77,6 +79,9 @@
           "screenshots",
           "notes"
         ]
+      },
+      "electronInstallerDebian": {
+        "icon": "icons/png/256x256.png"
       },
       "electronWinstallerConfig": {
         "name": "STorrent"
