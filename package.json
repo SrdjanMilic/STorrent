@@ -34,7 +34,7 @@
     "eslint-plugin-standard": "^4.0.1",
     "extend": "^3.0.2",
     "fstream": "^1.0.12",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "npm": "^6.14.2",
     "standard": "^12.0.1",
     "tar": "^6.0.1"
