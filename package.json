@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "bootstrap": "^4.4.1",
-    "datatables.net": "^1.10.20",
+    "datatables.net": "^1.11.3",
     "datatables.net-bs4": "^1.10.20",
     "electron-compile": "^6.4.4",
     "electron-context-menu": "^0.9.1",
