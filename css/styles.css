@@ -1,75 +1,87 @@
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+
 @font-face {
     font-family: "Roboto";
     src: url("../fonts/Roboto-Regular.ttf");
 }
 
-#body {
-    font-family: "Roboto";
-    font-size: 14px;
-    margin-top: 15px;
+:root {
+    --main-font: "Roboto", sans-serif;
+}
+
+body {
+    font-family: var(--main-font);
+    font-size: 13px;
     color: #1a1a1a;
+    background-image: linear-gradient(0deg, #ffffff 50%, #f3f3f3 50%);
+    background-size: 4px 4px;
+}
+
+main {
+    height: calc(100vh - 105px);
+}
+
+.brand-wrapper {
+    width: 600px;
+}
+
+.navbar-brand {
+    margin: unset !important;
+    padding: unset !important;
+}
+
+.separator {
+    width: 2px;
+    height: 34px;
+    background-color: #ffffff;
 }
 
 input,
 .table {
-    font-family: "Roboto" !important;
+    font-family: var(--main-font) !important;
     color: #1a1a1a !important;
 }
 
-#form-wrapper {
-    width: 30%;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+button {
+    font-family: var(--main-font) !important;
 }
 
-#form-wrapper>div {
-    margin-bottom: 0 !important;
+.bi-github {
+    font-size: 25px;
+    color: #ffffff;
 }
 
-#search {
-    margin: 0 15px;
-    width: 32%;
-}
-
-#search-term {
-    height: 32px;
-    font-weight: bold;
-    padding: .375rem 1.75rem .375rem .75rem;
-}
-
-#btn-search {
-    padding: 0 12px;
-}
-
-/* Clear button */
-#clear {
-    position: absolute;
-    right: 55px;
-    top: 10px;
-    width: 12px;
-    height: 12px;
-    z-index: 100;
+.navbar-brand {
     cursor: pointer;
 }
 
-/* Search button icon */
-.magnifying-glass {
-    width: 15px;
-    height: 15px;
+.logo-image {
+    height: 45px;
+}
+
+.logo-text {
+    margin: 0;
+}
+
+.home-page {
+    height: 100%;
+    padding-top: 15%;
+}
+
+.button-search {
+    white-space: nowrap;
+}
+
+.bi.bi-search::before {
+    font-weight: bold !important;
 }
 
 #torrent-results {
     margin-top: 15px;
 }
 
-.fas {
-    line-height: inherit !important;
-}
-
-.dataTables_wrapper {
-    margin-bottom: 15px;
+.row {
+    margin: 0 !important;
 }
 
 th {
@@ -87,28 +99,43 @@ table.dataTable.table-sm .sorting_desc:after {
 
 td {
     word-wrap: break-word;
-    vertical-align: middle !important;
     text-align: center !important;
 }
 
-td:nth-child(2) {
-    text-align: initial !important;
-}
-
-td:nth-child(3),
-td:nth-child(6) {
+td:nth-child(2),
+td:nth-child(8) {
+    text-align: left !important;
+    padding-left: 8px !important;
+    width: 100%;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.row {
-    margin: 0 !important;
+td:nth-child(2) {
+    max-width: 300px;
 }
 
-#torrent-results .dataTables_wrapper>div.row:nth-child(3) {
-    margin-top: 7px !important;
+td:nth-child(8) {
+    max-width: 200px;
 }
 
-.download-button {
-    height: 14px;
-    width: 14px;
+.loader-overlay {
+    height: 100%;
+    width: 100%;
+    background-color: #1a1a1a;
+    opacity: 0.2;
+    position: absolute;
+    display: none;
+    z-index: 1;
+    top: 0;
+}
+
+.spinner {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    z-index: 2;
+    position: absolute;
+    display: none;
 }

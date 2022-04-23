@@ -1,194 +1,175 @@
-require('datatables.net-bs4')();
-
 const $ = require('jquery');
-const jQuery = require('jquery');
-const fakeLoader = require('jquery.fakeloader');
-const torrentSearch = require('torrent-search-api');
+require('datatables.net-bs5')();
 const modal = require('bootstrap');
+const torrentSearch = require('torrent-search-api');
 
-// TODO: error handling for sites that require autorization and ones there is no response
+const homePage = document.querySelector('.home-page');
+const searchInput = document.querySelector('.search-input');
+const myModal = new modal.Modal(document.getElementById('myModal'));
+const modalBodyParagraph = document.getElementById('paragraph');
+const brandContainer = document.querySelector('.navbar-brand');
+const loaderOverlay = document.querySelector('.loader-overlay');
+const spinner = document.querySelector('.spinner');
+
+const thePirateBay = document.getElementById('the-pirate-bay');
+const rarbg = document.getElementById('rarbg');
+
+let newDataSet = [];
+let modalMessage = 'Input the search term first.';
+
+searchInput.focus();
+
+thePirateBay.checked = true;
+rarbg.checked = false;
+
 torrentSearch.disableProvider('TorrentLeech'); // authentication
 torrentSearch.disableProvider('IpTorrents'); // authentication
+torrentSearch.disableProvider('Yggtorrent'); // authentication
 torrentSearch.disableProvider('Torrent9'); // public
 torrentSearch.disableProvider('Torrentz2'); // public (slow response)
 torrentSearch.disableProvider('1337x'); // public (fast response)
-torrentSearch.enableProvider('ThePirateBay'); // public
-torrentSearch.disableProvider('Yggtorrent'); // authentication
-torrentSearch.disableProvider('KickassTorrents'); // public
-torrentSearch.enableProvider('Rarbg'); // public (fast response)
 torrentSearch.disableProvider('TorrentProject'); // public
-torrentSearch.disableProvider('Yts'); // public
-torrentSearch.disableProvider('Limetorrents'); // public
-torrentSearch.disableProvider('Eztv'); // public
+torrentSearch.disableProvider('KickassTorrents'); // public
+torrentSearch.enableProvider('ThePirateBay'); // public
 
-/*
-const checkIfProviderIsActive = torrentSearch.isProviderActive('Rarbg');
-console.log(checkIfProviderIsActive);
-*/
-
-const searchTerm = document.getElementById('search-term');
-
-searchTerm.focus(); // place cursor in the search input filed
-
-const callModal = () => {
-  $('#myModal').modal('show');
-  $('#myModal').on('hidden.bs.modal', function (e) {
-    searchTerm.focus();
-  });
-};
+// torrentSearch.enableProvider('Yts'); // public
+// torrentSearch.enableProvider('Limetorrents'); // public
+// torrentSearch.enableProvider('Eztv'); // public
+// torrentSearch.enableProvider('Rarbg'); // public (fast response)
 
 const findTorrents = async () => {
-  const torrents = await torrentSearch.search(searchTerm.value, '', '');
+  let torrents = [];
+  let filtered = {};
 
-  if (torrents.length === 0) {
-    callModal();
-    $('.modal-body').text('There are no torrents with that name!');
-    return;
-  }
-
-  // Create table
-  const table = document.createElement('table');
-  table.className = 'table table-sm table-condensed table-bordered table-hover table-striped';
-
-  // Create table head
-  const thead = table.createTHead();
-
-  // Create table head row
-  const theadRow = thead.insertRow();
-
-  // Create eight table head row cells
-  for (let i = 0; i < 8; i++) {
-    const th = document.createElement('th');
-    theadRow.appendChild(th);
-  }
-
-  // Create eight table head row cells names
-  const tableHeadCellName = table.getElementsByTagName('th');
-
-  tableHeadCellName[0].innerText = 'ID';
-  tableHeadCellName[1].innerText = 'Title';
-  tableHeadCellName[2].innerText = 'Date';
-  tableHeadCellName[3].innerText = 'Seeds';
-  tableHeadCellName[4].innerText = 'Peers';
-  tableHeadCellName[5].innerText = 'Size';
-  tableHeadCellName[6].innerText = 'Download';
-  tableHeadCellName[7].innerText = 'Provider';
-
-  const tbody = table.appendChild(document.createElement('tbody'));
-
-  // Loop for all torrent search results
-  for (let i = 0; i < torrents.length; i++) {
-    // Create table row
-    const newRow = tbody.insertRow();
-
-    // Create ID numbers
-    const id = newRow.insertCell();
-    id.appendChild(document.createTextNode(i + 1));
-    newRow.appendChild(id);
-
-    // Create Title String
-    const title = newRow.insertCell();
-    title.appendChild(document.createTextNode(JSON.stringify(torrents[i].title).substr(1).slice(0, -1)));
-    newRow.appendChild(title);
-
-    // Create Time String
-    const time = newRow.insertCell();
-    time.appendChild(document.createTextNode(JSON.stringify(torrents[i].time).substr(1).slice(0, -1)));
-    newRow.appendChild(time);
-
-    // Create Seeds String
-    const seeds = newRow.insertCell();
-    seeds.appendChild(document.createTextNode(JSON.stringify(torrents[i].seeds)));
-    newRow.appendChild(seeds);
-
-    // Create Peers String
-    const peers = newRow.insertCell();
-    peers.appendChild(document.createTextNode(JSON.stringify(torrents[i].peers)));
-    newRow.appendChild(peers);
-
-    // Create Size String
-    const size = newRow.insertCell();
-    size.appendChild(document.createTextNode(JSON.stringify(torrents[i].size).substr(1).slice(0, -1)));
-    newRow.appendChild(size);
-
-    // URL String
-    const url = newRow.insertCell();
-    newRow.appendChild(url);
-
-    const createLink = document.createElement('a');
-    createLink.href = JSON.stringify(torrents[i].magnet).substr(1).slice(0, -1);
-
-    // create download button
-    const img = document.createElement('img');
-    img.src = '../images/download.svg';
-    img.setAttribute('class', 'download-button');
-    createLink.appendChild(img);
-
-    url.appendChild(createLink);
-
-    // Provider String
-    const provider = newRow.insertCell();
-    newRow.appendChild(provider);
-    provider.appendChild(document.createTextNode(JSON.stringify(torrents[i].provider).substr(1).slice(0, -1)));
-    document.getElementById('torrent-results').appendChild(table);
-  }
+  loaderOverlay.style.display = 'flex';
+  spinner.style.display = 'flex';
 
   try {
-    torrents;
+    torrents = await torrentSearch.search(searchInput.value, '', '');
+    if (homePage) homePage.remove();
+
+    if (torrents.length == null || torrents === [] ||
+      torrents[0].title === 'No results returned') {
+      modalMessage = 'There are no torrents with that name.';
+      modalBodyParagraph.innerText = modalMessage;
+      myModal.show();
+    }
+
+    /*
+    ** Remove unused columns from objects
+    */
+
+    torrents.forEach(result => {
+      Object.keys(result).reduce((acc, key) => {
+        if (key !== 'id' && key !== 'imdb' && key !== 'category' && key !== 'status') {
+          acc[key] = result[key];
+        }
+        filtered = acc;
+        return acc;
+      }, {});
+      newDataSet.push([...Object.values(filtered)]);
+    });
+
+    // console.log('-> torrents', torrents);
+
+    $('table').DataTable({ // call data table api
+      autoWidth: false,
+      lengthChange: true,
+      pageLength: 15,
+      lengthMenu: [15, 50, 100],
+      retrieve: true,
+      columns: [
+        { title: 'Provider' },
+        { title: 'Title' },
+        { title: 'Time' },
+        { title: 'Seeds' },
+        { title: 'Peers' },
+        { title: 'Size' },
+        {
+          title: 'Download',
+          render: function (data, type) {
+            if (type === 'display') {
+              data = '<a href="' + data + '"><i class="bi bi-download"></i></a>';
+            }
+            return data;
+          }
+        },
+        { title: 'Description' }
+      ]
+    }).rows.add(newDataSet).draw();
+
+    loaderOverlay.style.display = 'none';
+    spinner.style.display = 'none';
+    document.body.style.backgroundImage = 'unset';
   } catch (err) {
-    alert(`Error occurred!\r\n${err}.\r\nPlease, try again.`);
-    return;
+    alert(err);
+    /*
+    modalMessage = err;
+    modalBodyParagraph.innerText = modalMessage;
+    myModal.show();
+    */
+    return null;
   }
-
-  $('table').DataTable({ // call data table api
-    autoWidth: false,
-    lengthChange: true,
-    pageLength: 15,
-    lengthMenu: [15, 50, 100],
-    retrieve: true
-  });
 };
 
-const loader = () => {
-  $('#fakeLoader').fakeLoader({
-    timeToHide: 500,
-    spinner: 'spinner2',
-    bgColor: '#1a1a1a'
-  });
-};
+function resetSearch () {
+  if (newDataSet.length !== 0) {
+    $('table').DataTable().clear().draw();
+    newDataSet = [];
+  }
+  return findTorrents();
+}
 
-const newSearch = () => {
-  loader();
-  $('.dataTables_wrapper').remove(); // remove previous results table
-  findTorrents();
-};
-
-const resetSearh = () => {
-  $('#fakeLoader').removeAttr('style'); // this is needed for loader function to fire each time
-  $('.form').removeAttr('id'); // remove class styles
-  newSearch();
-};
-
+//
 // Event Listeners
-searchTerm.addEventListener('keypress', () => {
-  if (event.keyCode === 13 && searchTerm.value === '') {
-    callModal();
-    $('.modal-body').text('Please, input search term!');
-  } else if (event.keyCode === 13 && searchTerm.value !== '') {
-    resetSearh();
+//
+
+thePirateBay.addEventListener('change', event => {
+  thePirateBay.checked = event.target.checked;
+
+  if (thePirateBay.checked === true) {
+    torrentSearch.enableProvider('ThePirateBay');
+  } else {
+    torrentSearch.disableProvider('ThePirateBay');
   }
 });
 
-document.getElementById('btn-search').addEventListener('click', () => {
-  if (searchTerm.value === '') {
-    callModal();
-    $('.modal-body').text('Please, input search term!');
-  } else if (searchTerm.value !== '') {
-    resetSearh();
+rarbg.addEventListener('change', event => {
+  rarbg.checked = event.target.checked;
+
+  if (rarbg.checked === true) {
+    torrentSearch.enableProvider('Rarbg');
+  } else {
+    torrentSearch.disableProvider('Rarbg');
   }
 });
 
-document.getElementById('clear').addEventListener('click', () => {
-  searchTerm.value = '';
-  searchTerm.focus();
+brandContainer.addEventListener('click', (event) => {
+  location.reload(); // TODO: needs to be addressed much better
+});
+
+searchInput.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter' && searchInput.value === '') {
+    event.preventDefault();
+    modalBodyParagraph.innerText = modalMessage;
+    myModal.show();
+  }
+
+  if (event.key === 'Enter' && searchInput.value !== '') {
+    event.preventDefault();
+    return resetSearch();
+  }
+});
+
+document.querySelector('.button-search').addEventListener('click', (event) => {
+  if (searchInput.value === '') {
+    event.preventDefault();
+    modalBodyParagraph.innerText = modalMessage;
+    myModal.show();
+  }
+
+  if (searchInput.value !== '') {
+    event.preventDefault();
+    return resetSearch();
+  }
 });
