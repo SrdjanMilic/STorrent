@@ -36,7 +36,7 @@
   </div>
 </div>
 
-<main>
+<main class="d-flex flex-column">
   <nav class="navbar navbar-dark bg-dark d-flex justify-content-between">
     <div class="container-fluid">
       <div class="brand-wrapper d-flex justify-content-between align-items-center">
@@ -56,7 +56,6 @@
             <i class="bi bi-search ms-1"></i>
           </button>
         </div>
-
       </div>
 
       <a href="https://github.com/SrdjanMilic/STorrent" target="_blank">
@@ -86,7 +85,7 @@
           </div>
 
           <div>
-            <input class="form-check-input" type="checkbox" id="yts">
+            <input class="form-check-input" type="checkbox" id="yts" disabled>
             <label class="form-check-label" for="yts">
               Yts
             </label>
@@ -95,13 +94,13 @@
 
         <div class="d-flex flex-column">
           <div>
-            <input class="form-check-input" type="checkbox" id="limetorrents">
+            <input class="form-check-input" type="checkbox" id="limetorrents" disabled>
             <label class="form-check-label" for="limetorrents">
               Limetorrents
             </label>
           </div>
           <div>
-            <input class="form-check-input" type="checkbox" id="eztv">
+            <input class="form-check-input" type="checkbox" id="eztv" disabled>
             <label class="form-check-label" for="eztv">
               Eztv
             </label>
@@ -114,6 +113,8 @@
   <div id="torrent-results">
     <table id="table" class="display table table-sm table-condensed table-bordered table-hover table-striped nowrap"></table>
   </div>
+
+  <div class="version-id align-self-end">v1.0.0</div>
 </main>
 
 <div class="loader-overlay"></div>

@@ -101,6 +101,7 @@ const findTorrents = async () => {
     loaderOverlay.style.display = 'none';
     spinner.style.display = 'none';
     document.body.style.backgroundImage = 'unset';
+    document.querySelector('.version-id').remove();
   } catch (err) {
     alert(err);
     /*
@@ -144,8 +145,9 @@ rarbg.addEventListener('change', event => {
   }
 });
 
-brandContainer.addEventListener('click', (event) => {
+brandContainer.addEventListener('click', () => {
   location.reload(); // TODO: needs to be addressed much better
+  console.log('-> event', event);
 });
 
 searchInput.addEventListener('keydown', (event) => {

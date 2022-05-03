@@ -18,7 +18,7 @@ body {
 }
 
 main {
-    height: calc(100vh - 105px);
+    height: 100vh;
 }
 
 .brand-wrapper {
@@ -138,4 +138,10 @@ td:nth-child(8) {
     z-index: 2;
     position: absolute;
     display: none;
+}
+
+.version-id {
+    text-align: end;
+    padding-right: var(--bs-gutter-x,.75rem);
+    padding-bottom: var(--bs-gutter-y,.75rem);
 }
