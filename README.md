@@ -7,7 +7,7 @@
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-brightgreen.svg?style=flat-square)](https://GitHub.com/SrdjanMilic/STorrent/graphs/commit-activity)
 [![Support](https://img.shields.io/badge/support-PayPal-lightgray.svg?style=flat-square)](https://paypal.me/SrdjanMilic?locale.x=en_US)
 
-### Torrent search providers are:
+### List of Torrent search providers:
 
 | Provider        | Authentication |
 |-----------------|----------------|
@@ -24,11 +24,6 @@
 | Yts             | public         |
 | Limetorrents    | public         |
 | Eztv            | public         |
-
-### You can toggle the active state of providers by calling two methods:
-> `...enableProvider` or `...disableProvider` in `js/index.js` file.
-
-Please note, if there is many providers enabled, waiting for search results could prolong a bit.  
 
 ## Usage
 
@@ -47,6 +42,8 @@ then cd to directory and run:
 1. npm i
 2. npm start
 
-**Credits**
+Please note, if there is many providers enabled, waiting for search results could prolong a bit.
+
+### Credits
 
 STorrent is based on 'torrent-search-api' by [Jimmy Laurent](https://github.com/JimmyLaurent/torrent-search-api).
