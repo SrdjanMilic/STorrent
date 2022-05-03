@@ -1,8 +1,8 @@
 {
   "name": "storrent",
-  "version": "0.1.6",
-  "description": "Search for torrents on multiple sites",
-  "productDescription": "Electron multi-platform desktop app, with table view and sortable columns...",
+  "version": "1.0.0",
+  "description": "Search for torrents with multiple providers",
+  "productDescription": "Get your torrents very fast and secure without visiting any web site.",
   "license": "GPL-3.0",
   "main": "main.js",
   "author": "Srdjan Milic",
