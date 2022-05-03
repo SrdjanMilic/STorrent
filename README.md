@@ -7,7 +7,7 @@
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-brightgreen.svg?style=flat-square)](https://GitHub.com/SrdjanMilic/STorrent/graphs/commit-activity)
 [![Support](https://img.shields.io/badge/support-PayPal-lightgray.svg?style=flat-square)](https://paypal.me/SrdjanMilic?locale.x=en_US)
 
-Search for torrents with multiple providers. Get your torrents very fast and secure without visiting any web site.
+Search for torrents with multiple providers. Get your torrents very fast and secure without visiting any website.
 
 ### List of Torrent search providers:
 
