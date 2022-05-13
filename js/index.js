@@ -10,6 +10,7 @@ const modalBodyParagraph = document.getElementById('paragraph');
 const brandContainer = document.querySelector('.navbar-brand');
 const loaderOverlay = document.querySelector('.loader-overlay');
 const spinner = document.querySelector('.spinner');
+const versionId = document.querySelector('.version-id');
 
 const thePirateBay = document.getElementById('the-pirate-bay');
 const rarbg = document.getElementById('rarbg');
@@ -101,7 +102,7 @@ const findTorrents = async () => {
     loaderOverlay.style.display = 'none';
     spinner.style.display = 'none';
     document.body.style.backgroundImage = 'unset';
-    document.querySelector('.version-id').remove();
+    if (versionId) versionId.remove();
   } catch (err) {
     alert(err);
     /*
@@ -147,7 +148,6 @@ rarbg.addEventListener('change', event => {
 
 brandContainer.addEventListener('click', () => {
   location.reload(); // TODO: needs to be addressed much better
-  console.log('-> event', event);
 });
 
 searchInput.addEventListener('keydown', (event) => {
