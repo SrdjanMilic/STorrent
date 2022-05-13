@@ -4,7 +4,7 @@
   "description": "Search for torrents with multiple providers",
   "productDescription": "Get your torrents very fast and secure without visiting any web site.",
   "license": "GPL-3.0",
-  "main": "main.js",
+  "main": "js/main.js",
   "author": "Srdjan Milic",
   "repository": "github:SrdjanMilic/STorrent",
   "maintainers": [
