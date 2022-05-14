@@ -40,6 +40,7 @@
     "tar": "^6.1.8"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.5",
     "bootstrap": "^5.1.3",
     "bootstrap-icons": "^1.8.1",
     "datatables.net-bs5": "^1.11.5",
@@ -47,7 +48,6 @@
     "electron-context-menu": "^0.9.1",
     "https-proxy-agent": "^2.2.4",
     "jquery": "^3.6.0",
-    "popper.js": "^1.16.1",
     "request": "^2.88.2",
     "torrent-search-api": "^2.1.4",
     "x-ray-crawler": "^2.0.5"
@@ -76,7 +76,6 @@
           ".vscode",
           "assets",
           "out",
-          "icons",
           "screenshots"
         ]
       },
@@ -84,7 +83,7 @@
         "name": "STorrent"
       },
       "electronInstallerDebian": {
-        "icon": "icons/png/256x256.png"
+        "icon": "icons/png/1024x1024.png"
       },
       "github_repository": {
         "owner": "SrdjanMilic",
