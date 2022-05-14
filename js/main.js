@@ -24,13 +24,13 @@ function createWindow () {
     minWidth: 1150,
     minHeight: 730,
     show: false,
-    icon: path.join(__dirname, '../icons/png/256x256.png')
+    icon: path.join(__dirname, '../icons/png/512x512.png')
   });
 
   win.loadFile('html/index.html');
 
   // Open the DevTools.
-  // win.webContents.openDevTools()
+  // win.webContents.openDevTools();
 
   // Emitted when the window is closed.
   win.on('closed', () => {
